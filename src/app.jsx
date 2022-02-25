@@ -11,11 +11,11 @@ export default function Home() {
   return (
     <>
       <Seo />
-      <main role="main" className="wrapper">
-        <div className="content">
-          Boston College React Template          
-        </div>
-      </main>
+      <div className={css.container}>
+        <main role="main" className="wrapper">
+          Boston College React Template         
+        </main>
+      </div>
     </>
   );
 }
