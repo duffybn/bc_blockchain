@@ -10,3 +10,6 @@
   box-sizing:border-box;
   border-top:1px solid gainsboro;
 }
+.navitem{
+  cursor:pointer;
+}
