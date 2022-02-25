@@ -11,7 +11,7 @@ const Seo = () => {
   // We use the async package https://github.com/staylor/react-helmet-async
   return <Helmet>
     <title>{SEO.title}</title>
-
+    <link rel="icon" type="image/x-icon" href="https://cdn.glitch.global/d7674480-73e0-49e0-acd4-3805874f347b/favicon.ico?v=1645800810097"/>
     <meta
       name="description"
       content={SEO.description}
