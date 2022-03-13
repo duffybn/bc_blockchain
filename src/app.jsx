@@ -11,6 +11,8 @@ import Seo from './components/seo.jsx';
 
 // App function that is reflected across the site
 export default function App() {
+  
+  
   return (
     <>
       <Seo />
