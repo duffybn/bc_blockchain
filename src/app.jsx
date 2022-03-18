@@ -19,7 +19,10 @@ export default class App extends React.Component {
       page: "home",
       ...initialStore,
     };
+    console.log("initialStore", this.state)
     this.setPage = this.setPage.bind(this);
+    		this.addLike = this.addLike.bind(this);
+		this.removeLike = this.removeLike.bind(this);
   }
   setPage(page) {
     this.setState({ page: page });

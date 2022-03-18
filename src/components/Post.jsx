@@ -12,7 +12,7 @@ function Post(props) {
     props.onUnlike(props.post.id);
   }
   return (
-    <div>
+    <div className={css.post}>
       <div className={css.user}>@{user.id}</div>
       <img className={css.photo} width="100%" src={post.photo}></img>
       <div className={css.like}>
