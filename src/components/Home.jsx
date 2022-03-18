@@ -1,24 +1,38 @@
 import React from "react";
 import Post from "./Post.jsx";
-function Home() {
-  const post = {
-    user: {
-      id: "judy",
-    },
-    post: {
-      id: "post-1",
-      userId: "judy",
-      photo:
-        "https://cdn.glitch.global/d7674480-73e0-49e0-acd4-3805874f347b/post1.png?v=1645800818011",
-    },
-    likes: {
-      self: true,
-      count: 1,
-    },
-  };
+function Home(props) {
+  const { posts, users, likes, comments, currentUserId, onLike, onUnlike } =
+    props; // retrieve data
+  function fineUser(post, users) {
+    return users.find((user) => user.id === post.userId);
+  }
+
+  function findComments(post, comments) {
+    return comments.filter((comment) => comment.postId === post.id);
+  }
+
+  function findLikes(post, likes) {
+    let postLikes = likes.filter((like) => like.postId === post.id);
+    return {
+      self: postLikes.some((like) => like.userId === currentUserId),
+      count: postLikes.length,
+    };
+  }
   return (
     <div>
-      <Post user={post.user} likes={post.likes} post={post.post} />
+      {posts
+        .sort((a, b) => new Date(b.datetime) - new Date(a.datetime))
+        .map((post) => (
+          <Post
+            key={post.id}
+            user={fineUser(post, users)}
+            post={post}
+            comments={findComments(post, comments)}
+            likes={findLikes(post, likes)}
+            onLike={onLike}
+            onUnlike={onUnlike}
+          />
+        ))}
     </div>
   );
 }
