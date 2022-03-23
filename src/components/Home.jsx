@@ -1,7 +1,7 @@
 import React from "react";
 import Post from "./Post.jsx";
 function Home(props) {
-  const { posts, users, likes, comments, currentUserId, onLike, onUnlike } =
+  const { posts, users, likes, comments, currentUserId, onLike, onUnlike, onComment } =
     props; // retrieve data
   function fineUser(post, users) {
     return users.find((user) => user.id === post.userId);
@@ -31,6 +31,7 @@ function Home(props) {
             likes={findLikes(post, likes)}
             onLike={onLike}
             onUnlike={onUnlike}
+            onComment={onComment}
           />
         ))}
     </div>

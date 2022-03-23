@@ -39,6 +39,16 @@ const [posts, setPosts] = useState(initialStore.posts);
           !(like.userId === currentUserId && like.postId === postId)
       ));
   }
+  
+  function addComment(postId, text) {
+    const comment = {
+      userId: currentUserId,
+      postId,
+      text,
+      datetime: new Date().toISOString()
+    };
+    setComments(comments.concat(comment));
+  }
   function renderMain(page) {
     switch (page) {
       case "home":
@@ -51,6 +61,7 @@ const [posts, setPosts] = useState(initialStore.posts);
             likes={likes}
             onLike={addLike}
             onUnlike={removeLike}
+            onComment={addComment}
           />
         );
       case "add":

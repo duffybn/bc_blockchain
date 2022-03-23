@@ -6,12 +6,20 @@ function Post(props) {
   const user = props.user;
   const post = props.post;
   const likes = props.likes;
+  const comments = props.comments;
   
   function handleLike() {
     props.onLike(props.post.id);
   }
   function handleUnlike() {
     props.onUnlike(props.post.id);
+  }
+  function handleSubmitComment(){
+    console.log('comment to be submitted', comment);
+    // pass this back to the app
+    if (comment!=""){
+      props.onComment(post.id, comment);
+    }
   }
   return (
     <div className={css.post}>
@@ -33,6 +41,9 @@ function Post(props) {
             />
           )}
         </button>
+      </div>
+      <div>
+        {comments.map(comment=><div key={comment.text}>@{comment.userId}: {comment.text}</div>)}
       </div>
       <div>
         <form onSubmit={handleSubmitComment}>
