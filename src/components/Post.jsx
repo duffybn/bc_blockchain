@@ -1,10 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import css from "../styles/Post.module.css";
 
 function Post(props) {
+  const [comment, setComment] = useState("");
   const user = props.user;
   const post = props.post;
   const likes = props.likes;
+  
   function handleLike() {
     props.onLike(props.post.id);
   }
@@ -31,6 +33,14 @@ function Post(props) {
             />
           )}
         </button>
+      </div>
+      <div>
+        <form onSubmit={handleSubmitComment}>
+          <input type="text" placeholder="Add a comment" 
+          value={comment}
+          onChange={e=>setComment(e.target.value)}></input>
+        </form>
+        
       </div>
     </div>
   );
