@@ -14,11 +14,14 @@ function Post(props) {
   function handleUnlike() {
     props.onUnlike(props.post.id);
   }
-  function handleSubmitComment(){
+  function handleSubmitComment(e){
     console.log('comment to be submitted', comment);
     // pass this back to the app
+    e.preventDefault();
     if (comment!=""){
       props.onComment(post.id, comment);
+      setComment("");
+      
     }
   }
   return (
