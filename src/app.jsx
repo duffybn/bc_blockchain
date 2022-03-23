@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Home from "./components/Home.jsx";
 import Navbar from "./components/Navbar.jsx";
 import NewPost from "./components/NewPost.jsx";
@@ -12,72 +12,62 @@ import css from "./styles/App.module.css";
 import Seo from "./components/seo.jsx";
 
 // App function that is reflected across the site
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      page: "home",
-      ...initialStore,
-    };
-    console.log("initialStore", this.state)
-    this.setPage = this.setPage.bind(this);
-    		this.addLike = this.addLike.bind(this);
-		this.removeLike = this.removeLike.bind(this);
-  }
-  setPage(page) {
-    this.setState({ page: page });
-  }
+export default function App(){
+  const [page, setPage] = useState("home");
+  const [currentUserId, setCurrentUserId] = useState(initialStore.currentUserId);
+const [users, setUsers] = useState(initialStore.users);
+const [posts, setPosts] = useState(initialStore.posts);
+  const [likes, setLikes] = useState(initialStore.likes);
+  const [comments, setComments] = useState(initialStore.comments);
+  const [followers, setFollowers] = useState(initialStore.followers);
+    
 
   // App.js
-  addLike(postId) {
+  function addLike(postId) {
     const like = {
-      userId: this.state.currentUserId,
+      userId: currentUserId,
       postId, // make sure you understand this shorthand syntax
       datetime: new Date().toISOString(),
     };
 
-    this.setState({
-      likes: this.state.likes.concat(like),
-    });
+    setLikes(likes.concat(like));
   }
-  removeLike(postId) {
+  function removeLike(postId) {
     // console.log('removeLike',postId, store.likes.filter(like=>!(like.userId===store.currentUserId && like.postId===postId)));
-    this.setState({
-      likes: this.state.likes.filter(
+    setLikes(likes.filter(
         (like) =>
-          !(like.userId === this.state.currentUserId && like.postId === postId)
-      ),
-    });
+          !(like.userId === currentUserId && like.postId === postId)
+      ));
   }
-  renderMain(page) {
+  function renderMain(page) {
     switch (page) {
       case "home":
         return (
           <Home
-            currentUserId={this.state.currentUserId}
-            posts={this.state.posts}
-            users={this.state.users}
-            comments={this.state.comments}
-            likes={this.state.likes}
-            onLike={this.addLike}
-            onUnlike={this.removeLike}
+            currentUserId={currentUserId}
+            posts={posts}
+            users={users}
+            comments={comments}
+            likes={likes}
+            onLike={addLike}
+            onUnlike={removeLike}
           />
         );
       case "add":
         return <NewPost />;
     }
   }
-  render() {
-    return (
-      <>
-        <Seo />
-        <div className={css.container}>
-          <main role="main" className="wrapper">
-            {this.renderMain(this.state.page)}
-          </main>
-          <Navbar onNavChange={this.setPage} />
-        </div>
-      </>
-    );
-  }
+  
+  return (
+    <>
+      <Seo />
+      <div className={css.container}>
+        <main role="main" className="wrapper">
+          {renderMain(page)}
+        </main>
+        <Navbar onNavChange={setPage} />
+      </div>
+    </>
+  );
+
 }
