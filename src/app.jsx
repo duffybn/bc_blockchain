@@ -78,6 +78,10 @@ const [posts, setPosts] = useState(initialStore.posts);
             <Route path="/add" element={
                 <NewPost />
               }/>
+            
+            <Route path=":param" element={
+                <NewPost />
+              }/>
           </Routes>
         </main>
         <Navbar onNavChange={setPage} />
