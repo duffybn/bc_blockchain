@@ -3,7 +3,12 @@ import Home from "./components/Home.jsx";
 import Navbar from "./components/Navbar.jsx";
 import NewPost from "./components/NewPost.jsx";
 import initialStore from "./utils/initialStore.js";
-import {Routes, Browser}
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
+
 // Import and apply global CSS stylesheet
 import "./styles/styles.css";
 // Import and apply App specific css
@@ -50,36 +55,34 @@ const [posts, setPosts] = useState(initialStore.posts);
     };
     setComments(comments.concat(comment));
   }
-  function renderMain(page) {
-    switch (page) {
-      case "home":
-        return (
-          <Home
-            currentUserId={currentUserId}
-            posts={posts}
-            users={users}
-            comments={comments}
-            likes={likes}
-            onLike={addLike}
-            onUnlike={removeLike}
-            onComment={addComment}
-          />
-        );
-      case "add":
-        return <NewPost />;
-    }
-  }
+ 
   
   return (
-    <>
+    <Router>
       <Seo />
       <div className={css.container}>
         <main role="main" className="wrapper">
-          {renderMain(page)}
+          <Routes>
+            <Route path="/" element={
+                <Home
+                  currentUserId={currentUserId}
+                  posts={posts}
+                  users={users}
+                  comments={comments}
+                  likes={likes}
+                  onLike={addLike}
+                  onUnlike={removeLike}
+                  onComment={addComment}
+                />
+              }/>
+            <Route path="/add" element={
+                <NewPost />
+              }/>
+          </Routes>
         </main>
         <Navbar onNavChange={setPage} />
       </div>
-    </>
+    </Router>
   );
 
 }

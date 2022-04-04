@@ -1,8 +1,17 @@
 import React from "react";
-
+import {
+  useNavigate
+} from "react-router-dom";
 function NewPost() {
-  return <div>NewPost</div>;
+  function handleClick(){
+    
+  }
+  return (
+    
+    <div>
+      <button style={{ border: "solid 1px gray", cursor: "grab" }} onClick={handleClick}>NewPost</button>
+    </div>
+  );
 }
-
 
 export default NewPost;
