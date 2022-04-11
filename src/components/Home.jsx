@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import Post from "./Post.jsx";
+import { StoreContext } from "../contexts/StoreContext";
+
 function Home(props) {
-  const { posts, users, likes, comments, currentUserId, onLike, onUnlike, onComment } =
-    props; // retrieve data
+  const {
+    posts,
+    users,
+    likes,
+    comments,
+    currentUserId,
+    addLike,
+    removeLike,
+    addComment,
+  } = useContext(StoreContext); // retrieve data
   function fineUser(post, users) {
     return users.find((user) => user.id === post.userId);
   }
@@ -29,9 +39,9 @@ function Home(props) {
             post={post}
             comments={findComments(post, comments)}
             likes={findLikes(post, likes)}
-            onLike={onLike}
-            onUnlike={onUnlike}
-            onComment={onComment}
+            onLike={addLike}
+            onUnlike={removeLike}
+            onComment={addComment}
           />
         ))}
     </div>

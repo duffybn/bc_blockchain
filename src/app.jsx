@@ -2,7 +2,8 @@ import React, {useState} from "react";
 import Home from "./components/Home.jsx";
 import Navbar from "./components/Navbar.jsx";
 import NewPost from "./components/NewPost.jsx";
-import initialStore from "./utils/initialStore.js";
+import StoreContextProvider from "./contexts/StoreContext";
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -19,60 +20,18 @@ import Seo from "./components/seo.jsx";
 
 // App function that is reflected across the site
 export default function App(){
-  const [page, setPage] = useState("home");
-  const [currentUserId, setCurrentUserId] = useState(initialStore.currentUserId);
-const [users, setUsers] = useState(initialStore.users);
-const [posts, setPosts] = useState(initialStore.posts);
-  const [likes, setLikes] = useState(initialStore.likes);
-  const [comments, setComments] = useState(initialStore.comments);
-  const [followers, setFollowers] = useState(initialStore.followers);
-    
 
-  // App.js
-  function addLike(postId) {
-    const like = {
-      userId: currentUserId,
-      postId, // make sure you understand this shorthand syntax
-      datetime: new Date().toISOString(),
-    };
 
-    setLikes(likes.concat(like));
-  }
-  function removeLike(postId) {
-    // console.log('removeLike',postId, store.likes.filter(like=>!(like.userId===store.currentUserId && like.postId===postId)));
-    setLikes(likes.filter(
-        (like) =>
-          !(like.userId === currentUserId && like.postId === postId)
-      ));
-  }
-  
-  function addComment(postId, text) {
-    const comment = {
-      userId: currentUserId,
-      postId,
-      text,
-      datetime: new Date().toISOString()
-    };
-    setComments(comments.concat(comment));
-  }
- 
   
   return (
     <Router>
       <Seo />
+      <StoreContextProvider>
       <div className={css.container}>
         <main role="main" className="wrapper">
           <Routes>
             <Route path="/" element={
-                <Home
-                  currentUserId={currentUserId}
-                  posts={posts}
-                  users={users}
-                  comments={comments}
-                  likes={likes}
-                  onLike={addLike}
-                  onUnlike={removeLike}
-                  onComment={addComment}
+                <Home                 
                 />
               }/>
             <Route path="/add" element={
@@ -84,8 +43,9 @@ const [posts, setPosts] = useState(initialStore.posts);
               }/>
           </Routes>
         </main>
-        <Navbar onNavChange={setPage} />
+        <Navbar  />
       </div>
+      </StoreContextProvider>
     </Router>
   );
 
