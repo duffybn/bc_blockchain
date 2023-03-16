@@ -3,6 +3,7 @@ import Home from "./components/Home.jsx";
 import Navbar from "./components/Navbar.jsx";
 import NewPost from "./components/NewPost.jsx";
 import StoreContextProvider from "./contexts/StoreContext";
+import Header from "./components/Header.jsx";
 
 import {
   BrowserRouter as Router,
@@ -27,7 +28,7 @@ export default function App(){
     <Router>
       <Seo />
       <StoreContextProvider>
-      
+        <Header />
       <div className={css.container}>
         <main role="main" className="wrapper">
           <Routes>

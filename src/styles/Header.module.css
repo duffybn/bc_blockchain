@@ -1,0 +1,17 @@
+.header{
+  position:fixed;
+  top:0;
+  display:flex;
+  justify-content:space-evenly;
+  left:0;
+  right:0;
+  padding:15px;
+  margin:0;
+  box-sizing:border-box;
+  border-bottom:1px solid gainsboro;
+  background-color: white;
+
+}
+.headitem{
+  cursor:pointer;
+}
