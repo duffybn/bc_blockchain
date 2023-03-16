@@ -10,11 +10,10 @@ function NewPost() {
     navigate(-1)
   }
   return (
-
+    
     <div>
       <button style={{ border: "solid 1px gray", cursor: "grab" }} onClick={handleClick}>NewPost</button>
       <div>{param}</div>
-      New Post
     </div>
   );
 }

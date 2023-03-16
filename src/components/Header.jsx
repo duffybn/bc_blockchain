@@ -9,9 +9,9 @@ function Header() {
   return (
     <nav className={css.header}>
       <div className={css.headitem}>
-          <Link to="/">
-        <img src="https://cdn.glitch.global/d7674480-73e0-49e0-acd4-3805874f347b/home.svg?v=1645800816915"/>
-      </Link>
+          <button>
+              <img src="https://cdn.glitch.global/ce7a503b-7720-4b27-9a59-4a32173ba09d/camera.svg?v=1647444622546" alt="Camera"/>
+          </button>
       </div>
       <div>
         <button>
