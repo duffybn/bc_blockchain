@@ -45,7 +45,7 @@ export default function App(){
               }/>
           </Routes>
         </main>
-        <Navbar  />
+       
       </div>
       </StoreContextProvider>
     </Router>
