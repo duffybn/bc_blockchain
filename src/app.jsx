@@ -27,6 +27,7 @@ export default function App(){
     <Router>
       <Seo />
       <StoreContextProvider>
+      
       <div className={css.container}>
         <main role="main" className="wrapper">
           <Routes>
