@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext,  } from "react";
 import Post from "./Post.jsx";
 import { StoreContext } from "../contexts/StoreContext";
 
@@ -49,6 +49,10 @@ import { StoreContext } from "../contexts/StoreContext";
 // }
 
 function Home(){
+  
+  const searchBar = () => {
+    
+  }
   return(<div>Test</div>);
 
 }
