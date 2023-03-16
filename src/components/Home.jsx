@@ -1,8 +1,6 @@
-import React, { useContext,  useState} from "react";
+import React, { useContext,  } from "react";
 import Post from "./Post.jsx";
 import { StoreContext } from "../contexts/StoreContext";
-
-
 
 // function Home(props) {
 //   const {
@@ -51,8 +49,6 @@ import { StoreContext } from "../contexts/StoreContext";
 // }
 
 function Home(){
-  
-  const [query, setQuery] = useState("")
   
   const searchBar = () => {
     
