@@ -1,0 +1,45 @@
+.newPost{
+  font-family: sans-serif;
+  max-width: 450px;
+  width:100%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.message{
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  color: grey;
+}
+.desc{
+  padding: 16px;
+  border-bottom: 1px dashed #dbdbdb;
+}
+.desc textarea{
+  box-sizing: border-box;
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  font: inherit;
+  padding: 0;
+}
+.actions{
+  width:100%;
+  box-sizing: border-box;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.actions button{
+  color: #3897f0;
+  font-weight: 600;
+  font-size: 16px;
+  margin-left:10px;
+  padding-bottom: 50px;
+}
+.error{
+  color:#FF1744;
+  padding: 4px 16px;
+}
