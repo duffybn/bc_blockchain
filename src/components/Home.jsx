@@ -48,13 +48,28 @@ import { StoreContext } from "../contexts/StoreContext";
 //   );
 // }
 
-function Home(){
+// function Home(){
   
-  const searchBar = () => {
+//   const searchBar = () => {
     
-  }
-  return(<div>Test</div>);
+//   }
+//   return(<div>Test</div>);
 
+// }
+
+// export default Home;
+
+const Home = ({keyword, onChange}) => {
+  const BarStyle = {width:"111rem",background:"#F0F0F0", border:"none", padding:"0.5rem"};
+  return (
+    <input 
+     style={BarStyle}
+     key="search-bar"
+     value={keyword}
+     placeholder={"Search Professor"}
+     onChange={(e) => onChange(e.target.value)}
+    />
+  );
 }
 
 export default Home;

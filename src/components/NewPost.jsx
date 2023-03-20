@@ -12,7 +12,7 @@ function NewPost() {
   return (
     
     <div>
-      <button style={{ border: "solid 1px gray", cursor: "grab" }} onClick={handleClick}>NewPost</button>
+      <button style={{ border: "solid 1px gray", cursor: "grab" }} onClick={handleClick}>Back</button>
       <div>{param}</div>
     </div>
   );

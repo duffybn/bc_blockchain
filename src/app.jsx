@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Home from "./components/Home.jsx";
 import Navbar from "./components/Navbar.jsx";
 import NewPost from "./components/NewPost.jsx";
@@ -20,7 +20,7 @@ import css from "./styles/App.module.css";
 import Seo from "./components/seo.jsx";
 
 // App function that is reflected across the site
-export default function App(data){
+export default function App(){
 
 
   
@@ -33,8 +33,7 @@ export default function App(data){
         <main role="main" className="wrapper">
           <Routes>
             <Route path="/" element={
-                <Home                 
-                />
+                <Home />
               }/>
             <Route path="/add" element={
                 <NewPost />
