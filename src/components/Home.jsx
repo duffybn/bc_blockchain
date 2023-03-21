@@ -1,7 +1,10 @@
-import React, { useContext,  } from "react";
+import React, { useContext, useState} from "react";
 import Post from "./Post.jsx";
 import Search from "./Search.jsx"
 import { StoreContext } from "../contexts/StoreContext";
+import {
+  Link
+} from "react-router-dom";
 
 // function Home(props) {
 //   const {
@@ -60,8 +63,11 @@ import { StoreContext } from "../contexts/StoreContext";
 
 // export default Home;
 
+ // 
+
 const Home = ({keyword, onChange}) => {
   const BarStyle = {width:"111rem",background:"#F0F0F0", border:"none", padding:"0.5rem"};
+  const [query, setQuery] = useState("");
   const posts = [{id: "1", professor: "Bob", college: "Boston College"}, {id: "2", professor: "Jill", college: "Boston College"}];
   return (
     <div>
@@ -73,12 +79,17 @@ const Home = ({keyword, onChange}) => {
        placeholder={"Search Professor"}
        onChange={(e) => onChange(e.target.value)}
       />
-      
-      <ul>
+   
+      <div>
         {posts.map((post) => (
-          <ul key = {post.id}>{post.professor} {post.college}</ul>  
+          <div key = {post.id}>
+            <Link to "/">
+              {post.professor} at {post.college}
+            </Link>
+          </div>  
         ))}
-      </ul>
+      </div>
+     
     </div>
   );
 }
