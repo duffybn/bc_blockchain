@@ -1,6 +1,7 @@
 import React, { useContext, useState} from "react";
 import Post from "./Post.jsx";
 import Search from "./Search.jsx"
+import posts from "../utils/posts.js"
 import { StoreContext } from "../contexts/StoreContext";
 import {
   Link
@@ -68,7 +69,6 @@ import {
 const Home = ({keyword, onChange}) => {
   const BarStyle = {width:"111rem",background:"#F0F0F0", border:"none", padding:"0.5rem"};
   const [query, setQuery] = useState("");
-  const posts = [{id: "1", professor: "Bob", college: "Boston College"}, {id: "2", professor: "Jill", college: "Boston College"}];
   return (
     <div>
       

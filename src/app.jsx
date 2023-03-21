@@ -41,7 +41,7 @@ export default function App(){
                 <NewPost />
               }/>
 
-            <Route path="/profile" element={
+            <Route path="/profile/:professor" element={
              <Profile/> 
             }/>
             

@@ -10,10 +10,13 @@ import {Navigate} from 'react-router-dom';
 
 function Header() {
   const navigate = useNavigate();
+  function handleCancel(e){
+     navigate(-1);
+  }
   return (
     <nav className={css.header}>
        <div className={css.headitem}>
-          <button onClicl =>
+          <button onClick={handleCancel}>
               <img src="https://cdn.glitch.global/d7674480-73e0-49e0-acd4-3805874f347b/back.svg?v=1645800817845" alt="Back"/>
           </button>
       </div>
