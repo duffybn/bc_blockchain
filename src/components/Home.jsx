@@ -1,5 +1,6 @@
 import React, { useContext,  } from "react";
 import Post from "./Post.jsx";
+import Search from "./Search.jsx"
 import { StoreContext } from "../contexts/StoreContext";
 
 // function Home(props) {
