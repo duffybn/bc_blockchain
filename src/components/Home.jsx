@@ -74,7 +74,9 @@ const Home = ({keyword, onChange}) => {
       />
       
       <ul>
-        
+        {posts.map((post) => (
+          <ul key = {post.id}>{post.professor} {post.college}</ul>  
+        ))}
       </ul>
     </div>
   );
