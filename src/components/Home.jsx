@@ -61,14 +61,22 @@ import { StoreContext } from "../contexts/StoreContext";
 
 const Home = ({keyword, onChange}) => {
   const BarStyle = {width:"111rem",background:"#F0F0F0", border:"none", padding:"0.5rem"};
+  const posts = [{id: "1", professor: "Bob", college: "Boston College"}, {id: "2", professor: "Jill", college: "Boston College"}];
   return (
-    <input 
-     style={BarStyle}
-     key="search-bar"
-     value={keyword}
-     placeholder={"Search Professor"}
-     onChange={(e) => onChange(e.target.value)}
-    />
+    <div>
+      
+      <input 
+       style={BarStyle}
+       key="search-bar"
+       value={keyword}
+       placeholder={"Search Professor"}
+       onChange={(e) => onChange(e.target.value)}
+      />
+      
+      <ul>
+        
+      </ul>
+    </div>
   );
 }
 
