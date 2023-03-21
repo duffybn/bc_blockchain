@@ -5,6 +5,7 @@ import NewPost from "./components/NewPost.jsx";
 import StoreContextProvider from "./contexts/StoreContext";
 import Header from "./components/Header.jsx";
 import Profile from "./components/Profile.jsx"
+import Login from "./components/Login.jsx"
 
 import {
   BrowserRouter as Router,
@@ -40,12 +41,16 @@ export default function App(){
                 <NewPost />
               }/>
 
-            <Route path="/profile/:userId" element={
+            <Route path="/profile" element={
              <Profile/> 
             }/>
             
             <Route path="newPost" element={
               <NewPost/>
+            }/>
+            
+            <Route path="login" element={
+             <Login/> 
             }/>
           </Routes>
         </main>
