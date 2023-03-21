@@ -83,7 +83,7 @@ const Home = ({keyword, onChange}) => {
       <div>
         {posts.map((post) => (
           <div key = {post.id}>
-            <Link to "/">
+            <Link to="/profile">
               {post.professor} at {post.college}
             </Link>
           </div>  

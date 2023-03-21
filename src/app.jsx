@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar.jsx";
 import NewPost from "./components/NewPost.jsx";
 import StoreContextProvider from "./contexts/StoreContext";
 import Header from "./components/Header.jsx";
+import Profile from "./components/Profile.jsx"
 
 import {
   BrowserRouter as Router,
@@ -38,10 +39,14 @@ export default function App(){
             <Route path="/add" element={
                 <NewPost />
               }/>
+
+            <Route path="/profile/:userId" element={
+             <Profile/> 
+            }/>
             
-            <Route path=":param" element={
-                <NewPost />
-              }/>
+            <Route path="newPost" element={
+              <NewPost/>
+            }/>
           </Routes>
         </main>
        

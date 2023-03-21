@@ -20,10 +20,9 @@ function NewPost(props) {
     navigate(-1)
   }
   return (
-    
     <div>
       <button style={{ border: "solid 1px gray", cursor: "grab" }} onClick={handleClick}>Back</button>
-      <div>{param}</div>
+      <div></div>
     </div>
   );
   
