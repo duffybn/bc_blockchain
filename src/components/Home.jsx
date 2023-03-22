@@ -70,12 +70,17 @@ const Home = ({keyword, onChange}) => {
   const BarStyle = {width:"111rem",background:"#F0F0F0", border:"none", padding:"0.5rem"};
   const [query, setQuery] = useState("");
   const [searchInput, setSearchInput] = useState("");
+  let filtered
+  
+  
   function handleChange(event) {
+
     console.log(event.target.value);
-    const filtered =
+    filtered = posts.filter(d=>d.professor.includes(event.target.value))
+    console.log("inside", filtered[0].professor)
   }
   
-  
+  console.log("outside", filtered)
   
   return (
     <div>
