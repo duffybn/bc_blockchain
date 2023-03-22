@@ -68,17 +68,20 @@ import {
 
 const Home = ({keyword, onChange}) => {
   const BarStyle = {width:"111rem",background:"#F0F0F0", border:"none", padding:"0.5rem"};
-  const [query, setQuery] = useState("");
+  const [filtered, setFiltered] = useState("");
   const [searchInput, setSearchInput] = useState("");  
+  
   
   function handleChange(event) {
 
     console.log(event.target.value);
-    const filtered = posts.filter(d=>d.professor.includes(event.target.value))
-    console.log("inside", filtered[0].professor)
+    const test = posts.filter(d=>d.professor.includes(event.target.value));
+    setFiltered(test);
+    console.log("inside", test[0].professor)
     
   }
   
+  console.log("filtered", filtered)
   
   
   return (
@@ -87,7 +90,7 @@ const Home = ({keyword, onChange}) => {
       <input 
        style={BarStyle}
        key="search-bar"
-       value={keywordduf}
+       value={keyword}
        placeholder={"Search Professor"}
        onChange = {handleChange}
       />
@@ -102,7 +105,6 @@ const Home = ({keyword, onChange}) => {
           </div>  
         ))}
       </div>
-     
     </div>
   );
 }
