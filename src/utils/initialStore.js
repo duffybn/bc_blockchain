@@ -1,7 +1,5 @@
 /* sample data store*/
-export default { 
-    currentUserId: "cole",
-    posts:[
+const initialStore = [
         {   
             id:"post-1",
             userId:"Bill",
@@ -11,56 +9,34 @@ export default {
         },
         {
             id:"post-2",
-            userId:"nick",
-            desc: "I loved this professor",
-            grade: "9.5"
+            userId:"Jill",
+            desc: "Meh",
+            grade: "6.5"
         },
         {
             id:"post-3",
-            userId:"flash",
-            desc: "I loved this professor",
-            grade: "9.5"
+            userId:"Bob",
+            desc: "he was ok",
+            grade: "8.5"
         },
         {
             id:"post-4",
-            userId:"judy",
+            userId:"Jill",
             desc: "I loved this professor",
-            grade: "9.5"
+            grade: "10"
         },
         {
             id:"post-5",
-            desc: "I loved this professor",
-            grade: "9.5" 
+            userId: "Bob",
+            desc: "Hated this man",
+            grade: "1.5" 
         },
         {
             id:"post-6",
-            userId:"judy",
-            photo:"https://cdn.glitch.com/f70d577d-f905-45ee-bb92-042bfa767970%2Fpost6.png?v=1614382910363",
-            desc:"Having #goodtimes with folks here",
-            datetime: "2020-02-06T22:45:28Z",
+            userId:"Jill",
+            desc: "God awful",
+            grade: "0.5"
         },
-    ],
-    likes:[
-        {
-            userId:"judy",
-            postId:"post-1",
-            datetime:"2020-02-09T22:50:40Z"
-        },
-        {
-            userId:"nick",
-            postId:"post-2",
-            datetime:"2020-02-09T22:51:40Z"
-        },
-        {
-            userId:"flash",
-            postId:"post-2",
-            datetime:"2020-02-09T22:54:20Z"
-        },
-        {
-            userId:"judy",
-            postId:"post-3",
-            datetime:"2020-02-09T22:53:40Z"
-        }
     ]
-}
 
+export default initialStore;
