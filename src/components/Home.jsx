@@ -4,7 +4,8 @@ import Search from "./Search.jsx"
 import posts from "../utils/posts.js"
 import { StoreContext } from "../contexts/StoreContext";
 import {
-  Link
+  Link,
+  useParams
 } from "react-router-dom";
 
 // function Home(props) {
@@ -70,7 +71,7 @@ const Home = ({keyword, onChange}) => {
   const BarStyle = {width:"111rem",background:"#F0F0F0", border:"none", padding:"0.5rem"};
   const [filtered, setFiltered] = useState("");
   const [searchInput, setSearchInput] = useState("");  
-  
+  const {userId} = useParams()
   
   function handleChange(event) {
 
@@ -94,10 +95,20 @@ const Home = ({keyword, onChange}) => {
        onChange = {handleChange}
       />
        
-       {console.log(posts, "posts")}
-       {console.log(filtered, "fill")}
+       {console.log(posts.length, "posts")}
+       {console.log(filtered.length, "fill")}
       <div>
-        {posts.map((post) => (
+        {(filtered.length == 0) ?
+          
+          posts.map((post) => (
+          <div key = {post.id}>
+            <Link to="/profile">
+              {post.professor} at {post.college}
+            </Link>
+          </div>  
+        ))
+          :
+          filtered.map((post) => (
           <div key = {post.id}>
             <Link to="/profile">
               {post.professor} at {post.college}
