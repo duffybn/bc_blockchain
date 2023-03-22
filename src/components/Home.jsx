@@ -71,7 +71,7 @@ const Home = ({keyword, onChange}) => {
   const BarStyle = {width:"111rem",background:"#F0F0F0", border:"none", padding:"0.5rem"};
   const [filtered, setFiltered] = useState("");
   const [searchInput, setSearchInput] = useState("");  
-  const {userId} = useParams()
+   const {userId} = useParams();
   
   function handleChange(event) {
 
@@ -110,7 +110,7 @@ const Home = ({keyword, onChange}) => {
           :
           filtered.map((post) => (
           <div key = {post.id}>
-            <Link to="/profile">
+            <Link to={`/profile/${}`}>
               {post.professor} at {post.college}
             </Link>
           </div>  
