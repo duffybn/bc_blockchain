@@ -32,18 +32,21 @@ function NewPost(props) {
   }
   
   function handleMenu(event){
-    console.log('clicked one');
-    console.log(event.value);
+    console.log(this.value);
+    setDrop(this.value);
   };
 
-  
+
   return (
-    <Dropdown
-      trigger={<button>Select...</button>}
-      menu={posts.map((post) => ( <button onClick={handleMenu} value={post.professor}>{post.professor} </button> ))}
-     
-      />
+    <div>
       
+      <Dropdown
+        trigger={<button>Select...</button>}
+        menu={posts.map((post) => ( <button onClick={handleMenu} value={post.professor}>{post.professor} </button> ))}
+
+        />
+      You have selected {drop}
+   </div>
     
   );
 };
