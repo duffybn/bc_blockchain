@@ -10,7 +10,13 @@ import Login from "./components/Login.jsx"
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route,
+
+} from "react-router-dom";
+
+import {
+  Link,
+  useParams
 } from "react-router-dom";
 
 // Import and apply global CSS stylesheet
@@ -23,7 +29,7 @@ import Seo from "./components/seo.jsx";
 
 // App function that is reflected across the site
 export default function App(){
- 
+ const {userId} = useParams();
 
   
   return (
