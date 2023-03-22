@@ -1,5 +1,6 @@
 import React, {useState, useContext} from "react";
 import css from '../styles/newPost.module.css';
+import Dropdown from "./Dropdown.jsx";
 import {StoreContext} from '../contexts/StoreContext.jsx';
 import {
   useNavigate,
@@ -19,7 +20,12 @@ function NewPost(props) {
   function handleClick(){
     navigate(-1)
   }
-  return (<div>New Post</div>);
+  return (
+    <div>
+      New Post
+      <Dropdown placeHolder="Select..." />
+    </div>
+  );
 }
 
 export default NewPost;
