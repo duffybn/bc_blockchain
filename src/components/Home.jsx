@@ -69,6 +69,7 @@ import {
 const Home = ({keyword, onChange}) => {
   const BarStyle = {width:"111rem",background:"#F0F0F0", border:"none", padding:"0.5rem"};
   const [query, setQuery] = useState("");
+  const [searchInput, setSearchInput] = useState("");
   return (
     <div>
       
