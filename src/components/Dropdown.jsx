@@ -27,6 +27,13 @@ const Dropdown = ({ placeHolder }) => {
         </div>
       </div>
       <div className="dropdown-menu">
+        {
+          posts.map((option) => (
+            <div key={option.id} className="dropdown-item">
+              {option.professor}
+            </div>
+          ))
+        }
       </div>
     </div>
   );
