@@ -77,12 +77,11 @@ const Home = ({keyword, onChange}) => {
     console.log(event.target.value);
     const test = posts.filter(d=>d.professor.includes(event.target.value));
     setFiltered(test);
-    console.log("inside", test[0].professor)
+    console.log("inside", filtered)
     
   }
   
-  console.log("filtered", filtered)
-  
+
   
   return (
     <div>
@@ -95,7 +94,8 @@ const Home = ({keyword, onChange}) => {
        onChange = {handleChange}
       />
        
-      {console.log()}
+       {console.log(posts, "posts")}
+       {console.log(filtered, "fill")}
       <div>
         {posts.map((post) => (
           <div key = {post.id}>
