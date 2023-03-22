@@ -1,12 +1,22 @@
 import React, {useState, useContext} from "react";
 import css from '../styles/newPost.module.css';
-import Dropdown from "./Dropdown.jsx";
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import posts from "../utils/posts.js"
 import {StoreContext} from '../contexts/StoreContext.jsx';
 import {
   useNavigate,
   useParams, 
   Navigate
 } from "react-router-dom";
+
+//    <Dropdown
+//         isSearchable
+        
+//         placeHolder="Select..."
+//         options={posts}
+//         onChange={(value) => console.log(value)}
+//       />
 
 
 function NewPost(props) {
@@ -22,8 +32,11 @@ function NewPost(props) {
   }
   return (
     <div>
-      New Post
-      <Dropdown placeHolder="Select..." />
+      <DropdownButton id="dropdown-basic-button" title="Dropdown button">
+      <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+      <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+      <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+    </DropdownButton>
     </div>
   );
 }
