@@ -31,15 +31,16 @@ function NewPost(props) {
     navigate(-1)
   }
   
-  const handleMenu = () => {
+  function handleMenu(event){
     console.log('clicked one');
+    console.log(event.value);
   };
 
   
   return (
     <Dropdown
       trigger={<button>Select...</button>}
-      menu={posts.map((post) => ( <button onClick={handleMenu}>{post.professor}</button>))}
+      menu={posts.map((post) => ( <button onClick={handleMenu} value={post.professor}>{post.professor} </button> ))}
      
       />
       
