@@ -70,6 +70,13 @@ const Home = ({keyword, onChange}) => {
   const BarStyle = {width:"111rem",background:"#F0F0F0", border:"none", padding:"0.5rem"};
   const [query, setQuery] = useState("");
   const [searchInput, setSearchInput] = useState("");
+  function handleChange(event) {
+    console.log(event.target.value);
+    const filtered =
+  }
+  
+  
+  
   return (
     <div>
       
@@ -78,9 +85,10 @@ const Home = ({keyword, onChange}) => {
        key="search-bar"
        value={keyword}
        placeholder={"Search Professor"}
-       onChange={(e) => onChange(e.target.value)}
+       onChange = {handleChange}
       />
-   
+       
+      {console.log()}
       <div>
         {posts.map((post) => (
           <div key = {post.id}>
