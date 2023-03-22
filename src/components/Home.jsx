@@ -87,7 +87,7 @@ const Home = ({keyword, onChange}) => {
       <input 
        style={BarStyle}
        key="search-bar"
-       value={keyword}
+       value={keywordduf}
        placeholder={"Search Professor"}
        onChange = {handleChange}
       />
