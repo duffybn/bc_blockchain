@@ -1,7 +1,6 @@
 import React, {useState, useContext} from "react";
 import css from '../styles/newPost.module.css';
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+
 import posts from "../utils/posts.js"
 import {StoreContext} from '../contexts/StoreContext.jsx';
 import {
@@ -26,19 +25,56 @@ function NewPost(props) {
   const [error, setError] = useState('');
   const [photo, setPhoto] = useState(null);
   const navigate = useNavigate();
+  const [drop, setDrop] = useState("");
   const {param} = useParams();
   function handleClick(){
     navigate(-1)
   }
+  
+  const handleMenu = () => {
+    console.log('clicked one');
+  };
+
+  
   return (
-    <div>
-      <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-      <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-      <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-      <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-    </DropdownButton>
+    <Dropdown
+      trigger={<button>Select...</button>}
+      menu={posts.map((post) => ( <button onClick={handleMenu}>{post.professor}</button>))}
+     
+      />
+      
+    
+  );
+};
+
+const Dropdown = ({ trigger, menu }) => {
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => {
+    setOpen(!open);
+  };
+
+  return (
+    <div className="dropdown">
+      {React.cloneElement(trigger, {
+        onClick: handleOpen,
+      })}
+      {open ? (
+        <ul className="menu">
+          {menu.map((menuItem, index) => (
+            <li key={index} className="menu-item">
+              {React.cloneElement(menuItem, {
+                onClick: () => {
+                  menuItem.props.onClick();
+                  setOpen(false);
+                },
+              })}
+            </li>
+          ))}
+        </ul>
+      ) : null}
     </div>
   );
-}
+};
 
 export default NewPost;
