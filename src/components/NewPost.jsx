@@ -35,6 +35,10 @@ function NewPost(props) {
     console.log(this.value);
     setDrop(this.value);
   };
+  
+  function handleDescChange(e){
+    setDesc(e.target.value);
+  }
 
 
   return (
@@ -46,6 +50,8 @@ function NewPost(props) {
 
         />
       You have selected {drop}
+      <p></p>
+      <textarea placeholder="Enter review..." value={desc} onChange={handleDescChange}></textarea>
    </div>
     
   );
@@ -81,6 +87,7 @@ const Dropdown = ({ trigger, menu }) => {
           </ul>
         ) : null}
       </div>
+      
     </div>
   );
 };

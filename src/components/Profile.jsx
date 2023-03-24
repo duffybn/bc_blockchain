@@ -14,15 +14,18 @@ function Profile(){
   const placeholder = "Jill"
   
   
-  function sort(data) {
-    const test = data.filter(d=> (d.userId == placeholder));
-    setFiltered(test);
-  }
+  // function sort(data) {
+  //   const test = data.filter(d=> (d.userId == placeholder));
+  //   setFiltered(test);
+  // }
+  const filtered2 = initialStore.filter(d=> (d.userId == placeholder));
+  
     return(
     <div>
-      Profile
-      {initialStore.map((post) => (
-          <div>{post.id}</div>
+        {placeholder}'s Profile
+      <p></p>
+      {filtered2.map((post) => (
+          <div> {post.desc} {post.grade}</div>
         ))}
     </div>
   );
