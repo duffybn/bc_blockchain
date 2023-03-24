@@ -52,6 +52,8 @@ function NewPost(props) {
       You have selected {drop}
       <p></p>
       <textarea placeholder="Enter review..." value={desc} onChange={handleDescChange}></textarea>
+      <p></p>
+      {desc}
    </div>
     
   );
