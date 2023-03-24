@@ -99,14 +99,14 @@ const Home = ({keyword, onChange}) => {
        {console.log(filtered.length, "fill")}
       <div>
         {(filtered.length == 0) ?
-          
-          posts.map((post) => (
+            posts.map((post) => (
           <div key = {post.id}>
             <Link to={`/profile`}>
               {post.professor} at {post.college}
             </Link>
           </div>  
         ))
+        // console.log("Test")
           :
           filtered.map((post) => (
           <div key = {post.id}>

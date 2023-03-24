@@ -4,8 +4,9 @@ import Navbar from "./components/Navbar.jsx";
 import NewPost from "./components/NewPost.jsx";
 import StoreContextProvider from "./contexts/StoreContext";
 import Header from "./components/Header.jsx";
-import Profile from "./components/Profile.jsx"
-import Login from "./components/Login.jsx"
+import Profile from "./components/Profile.jsx";
+import Login from "./components/Login.jsx";
+import Dummy from "./components/Dummy.jsx"
 
 import {
   BrowserRouter as Router,
@@ -57,6 +58,10 @@ export default function App(){
             
             <Route path="login" element={
              <Login/> 
+            }/>
+            
+            <Route path="dummy" element={
+             <Dummy/> 
             }/>
           </Routes>
         </main>

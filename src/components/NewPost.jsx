@@ -59,24 +59,28 @@ const Dropdown = ({ trigger, menu }) => {
   };
 
   return (
-    <div className="dropdown">
-      {React.cloneElement(trigger, {
-        onClick: handleOpen,
-      })}
-      {open ? (
-        <ul className="menu">
-          {menu.map((menuItem, index) => (
-            <li key={index} className="menu-item">
-              {React.cloneElement(menuItem, {
-                onClick: () => {
-                  menuItem.props.onClick();
-                  setOpen(false);
-                },
-              })}
-            </li>
-          ))}
-        </ul>
-      ) : null}
+    <div>
+      New Post Page
+      <p></p>
+      <div className="dropdown">
+        {React.cloneElement(trigger, {
+          onClick: handleOpen,
+        })}
+        {open ? (
+          <ul className="menu">
+            {menu.map((menuItem, index) => (
+              <div key={index} className="menu-item">
+                {React.cloneElement(menuItem, {
+                  onClick: () => {
+                    menuItem.props.onClick();
+                    setOpen(false);
+                  },
+                })}
+              </div>
+            ))}
+          </ul>
+        ) : null}
+      </div>
     </div>
   );
 };

@@ -31,7 +31,7 @@ function Header() {
         </button>
       </div>
       <div className={css.headitem}>
-           <Link to="/newpost">
+           <Link to="/dummy">
               <img src="https://cdn.glitch.global/ce7a503b-7720-4b27-9a59-4a32173ba09d/newpost.svg?v=1647444622487" alt="NewPost"/>
           </Link>
       </div>
