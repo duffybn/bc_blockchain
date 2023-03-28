@@ -1,5 +1,5 @@
 // /**
-//  * This is the main server script that provides the API endpoints
+//  * main server script for API endpoints
 //  *
 //  * Uses sqlite.js to connect to db
 //  */
@@ -52,15 +52,15 @@
 //   reply.status(status).send(data);
 // });
 
-// // Update name for an professor (auth)
-// // fastify.put("/professor", async (request, reply) => { 
-// //   let data = {};
-// //   const auth = authorized(request.headers.admin_key);
-// //   if(!auth || !request.body || !request.body.id || !request.body. name || !request.body.contract_adddress) data.success = false;
-// //   else data.success = await db.updateReview(request.body.id, request.body.name, request.contract_address); 
-// //   const status = data.success ? 201 : auth ? 400 : 401;
-// //   reply.status(status).send(data);
-// // });
+// // Update professor (auth)
+// fastify.put("/professor", async (request, reply) => { 
+//   let data = {};
+//   const auth = authorized(request.headers.admin_key);
+//   if(!auth || !request.body || !request.body.id || !request.body.name || !request.body.contract_adddress) data.success = false;
+//   else data.success = await db.updateReview(request.body.id, request.body.name, request.contract_address); 
+//   const status = data.success ? 201 : auth ? 400 : 401;
+//   reply.status(status).send(data);
+// });
 
 // // Delete a Professor (auth)
 // fastify.delete("/professor", async (request, reply) => {
@@ -98,8 +98,8 @@
 // fastify.put("/review", async (request, reply) => { 
 //   let data = {};
 //   const auth = authorized(request.headers.admin_key);
-//   if(!auth || !request.body || !request.body.id || !request.body.review) data.success = false;
-//   else data.success = await db.updateReview(request.body.id, request.body.review); 
+//   if(!auth || !request.body || !request.body.id || !request.body.contract || !request.body.university || !request.body.review || !request.body.rating) data.success = false;
+//   else data.success = await db.updateReview(request.body.id, request.body.contract, request.body.university, request.body.review, request.body.rating); 
 //   const status = data.success ? 201 : auth ? 400 : 401;
 //   reply.status(status).send(data);
 // });

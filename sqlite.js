@@ -1,4 +1,3 @@
-
 // const fs = require("fs");
 // const dbFile = "./.data/eva.db";
 // const exists = fs.existsSync(dbFile);
@@ -69,20 +68,21 @@
 //     return success.changes > 0 ? true : false;
 //   },
 
-//   // Update professor name
-//   // updateProfessorName: async (id, name) => {
-//   //   let success = false;
-//   //   try {
-//   //     success = await db.run(
-//   //       "Update PROFESSORS SET name = ? WHERE id = ?",
-//   //       name,
-//   //       id
-//   //     );
-//   //   } catch (dbError) {
-//   //     console.error(dbError);
-//   //   }
-//   //   return success.changes > 0 ? true : false;
-//   // },
+//   // Update professor fields
+//   updateProfessor: async (id, name, contract_address) => {
+//     let success = false;
+//     try {
+//       success = await db.run(
+//         "Update PROFESSORS SET name = ?, contract_address = ? WHERE id = ?",
+//         name,
+//         contract_address,
+//         id
+//       );
+//     } catch (dbError) {
+//       console.error(dbError);
+//     }
+//     return success.changes > 0 ? true : false;
+//   },
 
 //   // Remove prof
 //   deleteProfessor: async id => {
@@ -120,12 +120,14 @@
 //   },
 
 //   // Update review text
-//   updateReview: async (id, review) => {
+//   updateReview: async (id, university, review, rating) => {
 //     let success = false;
 //     try {
 //       success = await db.run(
-//         "Update REVIEWS SET review = ? WHERE id = ?",
+//         "Update REVIEWS SET university = ?, review = ?, rating = ? WHERE id = ?",
+//         university,
 //         review,
+//         rating,
 //         id
 //       );
 //     } catch (dbError) {
