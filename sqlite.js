@@ -18,19 +18,20 @@ dbWrapper
     try {
       if (!exists) {
         await db.run(
-          "CREATE TABLE PROFESSORS (id INTEGER PRIMARY KEY AUTOINCREMENT, NAME VARCHAR(100) NOT NULL, Contract_address INTEGER NOT NULL UNIQUE)"
+          "CREATE TABLE PROFESSORS (id INTEGER PRIMARY KEY AUTOINCREMENT, NAME VARCHAR(100) NOT NULL, Contract_address VARCHAR(100) NOT NULL UNIQUE)"
         );
         
         await db.run(
-        "CREATE TABLE REVIEWS (id INTEGER PRIMARY KEY AUTOINCREMENT, contract INTEGER references PROFESSORS(contract), UNIVERSITY VARCHAR(100) NOT NULL, rating INTEGER  CHECK ( rating >= 0 AND rating <= 10), review VARCHAR(100))"
+        "CREATE TABLE REVIEWS (id INTEGER PRIMARY KEY AUTOINCREMENT, contract VARCHAR(100) references PROFESSORS(contract_address), UNIVERSITY VARCHAR(100) NOT NULL, rating INTEGER  CHECK ( rating >= 0 AND rating <= 10), review VARCHAR(100))"
         );
+        
         for (let r = 0; r < 5; r++)
           await db.run(
-            "INSERT INTO Messages (message) VALUES (?)",
+            "INSERT INTO PROFESSORS (name, contract_address) VALUES (Professor John, 0xd79Bf6eB0ecf8604638B2fBe78439B4A99830197)",
             casual.catch_phrase
           );
       }
-      console.log(await db.all("SELECT * from Messages"));
+      console.log(await db.all("SELECT * from REVIEWS"));
     } catch (dbError) {
       console.error(dbError);
     }
