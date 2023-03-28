@@ -31,6 +31,49 @@ fastify.get("/", (request, reply) => {
   reply.status(200).send(data);
 });
 
+// Professors
+// Return reviews from the database helper script - no auth
+fastify.get("/profesor", async (request, reply) => {
+  let data = {};
+  data.chat = await db.getProfessors();
+  console.log(data.chat);
+  if(!data.chat) data.error = errorMessage;
+  const status = data.error ? 400 : 200;
+  reply.status(status).send(data);
+});
+
+// Add new review (auth)
+fastify.post("/review", async (request, reply) => {
+  let data = {};
+  const auth = authorized(request.headers.admin_key);
+  if(!auth || !request.body || !request.body.review) data.success = false;
+  else if(auth) data.success = await db.addReview(request.body.review);
+  const status = data.success ? 201 : auth ? 400 : 401;
+  reply.status(status).send(data);
+});
+
+// Update text for an review (auth)
+fastify.put("/review", async (request, reply) => { 
+  let data = {};
+  const auth = authorized(request.headers.admin_key);
+  if(!auth || !request.body || !request.body.id || !request.body.review) data.success = false;
+  else data.success = await db.updateReview(request.body.id, request.body.review); 
+  const status = data.success ? 201 : auth ? 400 : 401;
+  reply.status(status).send(data);
+});
+
+// Delete a review (auth)
+fastify.delete("/review", async (request, reply) => {
+  let data = {};
+  const auth = authorized(request.headers.admin_key);
+  if(!auth || !request.query || !request.query.id) data.success = false;
+  else data.success = await db.deleteReview(request.query.id);
+  const status = data.success ? 201 : auth ? 400 : 401;
+  reply.status(status).send(data);
+});
+
+
+// Reviews
 // Return reviews from the database helper script - no auth
 fastify.get("/review", async (request, reply) => {
   let data = {};
