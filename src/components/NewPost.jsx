@@ -41,6 +41,9 @@ function NewPost(props) {
     setDesc(e.target.value);
   }
 
+  function handleGradeChange(e){
+    setGrade(e.target.value)
+  }
 
   return (
     <div>
@@ -55,7 +58,10 @@ function NewPost(props) {
       <textarea placeholder="Enter review..." value={desc} onChange={handleDescChange}></textarea>
       <p></p>
       {desc}
-      <input type="number" placeholder="Enter grade..." value={grade} onChange{handleGradeC/>
+      <p></p>
+      <input type="text" placeholder="Enter grade..." value={grade} onChange={handleGradeChange}/>
+      <p></p>
+      {grade}
    </div>
     
   );
