@@ -2,7 +2,7 @@ import React, { useContext, useState} from "react";
 import Post from "./Post.jsx";
 import Search from "./Search.jsx"
 import posts from "../utils/posts.js"
-import { StoreContext } from "../contexts/StoreContext";
+// import { StoreContext } from "../contexts/StoreContext";
 import {
   Link,
   useParams

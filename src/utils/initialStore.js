@@ -1,14 +1,12 @@
 /* sample data store*/
 const initialStore = [
         {   
-            id:"post-1",
             userId:"Bill",
             desc: "I loved this professor",
             grade: "9.5"
 
         },
         {
-            id:"post-2",
             userId:"Jill",
             desc: "Meh",
             grade: "6.5"

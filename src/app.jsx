@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import Home from "./components/Home.jsx";
 import Navbar from "./components/Navbar.jsx";
 import NewPost from "./components/NewPost.jsx";
-import StoreContextProvider from "./contexts/StoreContext";
+// import StoreContextProvider from "./contexts/StoreContext";
 import Header from "./components/Header.jsx";
 import Profile from "./components/Profile.jsx";
 import Login from "./components/Login.jsx";
@@ -36,7 +36,6 @@ export default function App(){
   return (
     <Router>
       <Seo />
-      <StoreContextProvider>
         <Header />
       <div className={css.container}>
         <main role="main" className="wrapper">
@@ -67,7 +66,6 @@ export default function App(){
         </main>
        
       </div>
-      </StoreContextProvider>
     </Router>
   );
 

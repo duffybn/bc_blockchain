@@ -2,7 +2,7 @@ import React, {useState, useContext} from "react";
 import css from '../styles/newPost.module.css';
 
 import posts from "../utils/posts.js"
-import {StoreContext} from '../contexts/StoreContext.jsx';
+// import {StoreContext} from '../contexts/StoreContext.jsx';
 import {
   useNavigate,
   useParams, 
@@ -19,7 +19,7 @@ import {
 
 
 function NewPost(props) {
-  let {addPost} = useContext(StoreContext);
+  // let {addPost} = useContext(StoreContext);
   const [desc, setDesc] = useState('');
   const [dragging, setDragging] = useState(false);
   const [error, setError] = useState('');
