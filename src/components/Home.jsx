@@ -82,7 +82,7 @@ const Home = ({keyword, onChange}) => {
     
   }
   
-
+  console.log("This is working")
   
   return (
     <div>
