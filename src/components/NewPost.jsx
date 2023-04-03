@@ -59,7 +59,7 @@ function NewPost(props) {
       <p></p>
       {desc}
       <p></p>
-      <input type="text" placeholder="Enter grade..." value={grade} onChange={handleGradeChange}/>
+      <input type="number" placeholder="" value={grade} onChange={handleGradeChange} min = "0.0" max="10.0"/>
       <p></p>
       {grade}
    </div>
