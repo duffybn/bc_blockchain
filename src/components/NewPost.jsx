@@ -21,9 +21,10 @@ import {
 function NewPost(props) {
   // let {addPost} = useContext(StoreContext);
   const [desc, setDesc] = useState('');
-  const [dragging, setDragging] = useState(false);
-  const [error, setError] = useState('');
-  const [photo, setPhoto] = useState(null);
+  // const [dragging, setDragging] = useState(false);
+  // const [error, setError] = useState('');
+  // const [photo, setPhoto] = useState(null);
+  const [grade, setGrade] = useState('')
   const navigate = useNavigate();
   const [drop, setDrop] = useState("");
   const {param} = useParams();
@@ -54,6 +55,7 @@ function NewPost(props) {
       <textarea placeholder="Enter review..." value={desc} onChange={handleDescChange}></textarea>
       <p></p>
       {desc}
+      <input type="number" placeholder="Enter grade..." value={grade} onChange{handleGradeC/>
    </div>
     
   );
