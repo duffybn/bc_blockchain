@@ -28,6 +28,7 @@ function NewPost(props) {
   const navigate = useNavigate();
   const [drop, setDrop] = useState("");
   const [post, setPost] = useState("")
+  const [test, setTest] = useState("")
   const {param} = useParams();
   
   function handleClick(){
@@ -47,6 +48,16 @@ function NewPost(props) {
     setGrade(e.target.value)
   }
 
+  function handlePost(e){
+    const post ={
+      userId: drop,
+      desc: desc,
+      grade: grade
+    };
+    setTest(post)
+    console.log(drop)
+  }
+  
   return (
     <div>
       
@@ -64,7 +75,11 @@ function NewPost(props) {
       <input type="number" placeholder="" value={grade} onChange={handleGradeChange} min = "0.0" max="10.0"/>
       <p></p>
       {grade}
-     
+      <p></p>
+      <button onClick={handlePost}>
+      Submit
+      </button>
+      
    </div>
     
   );
