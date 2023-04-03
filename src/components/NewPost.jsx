@@ -27,7 +27,9 @@ function NewPost(props) {
   const [grade, setGrade] = useState('')
   const navigate = useNavigate();
   const [drop, setDrop] = useState("");
+  const [post, setPost] = useState("")
   const {param} = useParams();
+  
   function handleClick(){
     navigate(-1)
   }
@@ -62,6 +64,7 @@ function NewPost(props) {
       <input type="number" placeholder="" value={grade} onChange={handleGradeChange} min = "0.0" max="10.0"/>
       <p></p>
       {grade}
+     
    </div>
     
   );
