@@ -13,16 +13,18 @@ function Profile(){
   const [filtered, setFiltered] = useState("")
   const placeholder = "Jill"
   
+  console.log("the man", userId)
+  
   
   // function sort(data) {
   //   const test = data.filter(d=> (d.userId == placeholder));
   //   setFiltered(test);
   // }
-  const filtered2 = initialStore.filter(d=> (d.userId == placeholder));
+  const filtered2 = initialStore.filter(d=> (d.userId == userId));
   
     return(
     <div>
-        {placeholder}'s Profile
+        {userId}'s Profile
       <p></p>
       {filtered2.map((post) => (
           <div> {post.desc} {post.grade}</div>
