@@ -63,7 +63,7 @@ function NewPost(props) {
       
       <Dropdown
         trigger={<button>Select...</button>}
-        menu={posts.map((post) => ( <button onClick={handleMenu} value={post.professor}>{post.professor} </button> ))}
+        menu={posts.map((post) => ( <button onClick={handleMenu} value={post.professor}>{post.professor} at {post.college} </button> ))}
 
         />
       You have selected {drop}
