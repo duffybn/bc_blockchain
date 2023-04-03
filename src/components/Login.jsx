@@ -14,9 +14,13 @@ function Login(){
       var userObject = jwt_decode(response.credential);
       console.log(userObject);
       setUser(userObject);
-      document.getElementById("signInDiv").hidden = true
+      document.getElementById("signInDiv").hidden = true;
     }
   
+    function handleSignOut(event) {
+      setUser({});
+      document.getElementById("signInDiv").hidden = false;
+    }
     useEffect(() => {
       /* global google */
       google.accounts.id.initialize({
@@ -35,6 +39,11 @@ function Login(){
     return(
     <div className="Login">
     <div id="signInDiv"></div>
+        
+    { Object.keys(user).length != 0 &&
+    <button onClick={ (e) => handleSignOut(e)}>Sign Out</button>          
+        }
+
     { user &&
       <div>
         <img src={user.picture}></img>
