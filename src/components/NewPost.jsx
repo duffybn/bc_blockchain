@@ -19,7 +19,7 @@ import {
 //       />
 
 
-function NewPost(props) {
+function NewPost(props, {keyword}) {
   // let {addPost} = useContext(StoreContext);
   const [desc, setDesc] = useState('');
   // const [dragging, setDragging] = useState(false);
@@ -30,7 +30,10 @@ function NewPost(props) {
   const [drop, setDrop] = useState("");
   const [post, setPost] = useState("")
   const [test, setTest] = useState("")
+  const [filtered, setFiltered] = useState("");
   const {param} = useParams();
+  const value = ""
+  
   
   function handleClick(){
     navigate(-1)
@@ -60,10 +63,11 @@ function NewPost(props) {
   }
   
   function handleChange(){
-    
+    const stage = posts.filter(d=>d.professor.includes(event.target.value))
+    setFiltered(stage)
   }
  
-  const BarStyle = {width:"111rem",background:"#F0F0F0", border:"none", padding:"0.5rem"};
+  const BarStyle = {width:"11.4rem",background:"#F0F0F0", border:"none", padding:"0.5rem"};
   
   return (
     <div>
@@ -76,6 +80,25 @@ function NewPost(props) {
       You have selected {drop}
       <p></p>
 
+      <input 
+       style={BarStyle}
+       key="search-bar"
+       value= {keyword}
+       placeholder={"Search Professor"}
+       onChange = {handleChange}
+      />
+      
+      <div>
+        {(filtered.length == 0) ? console.log("hi") 
+        : filtered.map((post) => (
+        <div>
+          <button>
+            {post.professor}
+          </button>
+        </div>
+        ))}
+      </div>
+      
       <textarea placeholder="Enter review..." value={desc} onChange={handleDescChange}></textarea>
       <p></p>
       {desc}
