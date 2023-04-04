@@ -72,9 +72,11 @@ function NewPost(props, {keyword}) {
   }
   
   function handleChange(){
-    const stage = posts.filter(d=>d.professor.toLowerCase().includes(event.target.value.toLowerCase()))
     
-    setFiltered(stage)
+    (event.target.value != "") ? (
+    setFiltered(posts.filter(d=>d.professor.toLowerCase().includes(event.target.value.toLowerCase()))))
+ :
+    setFiltered("")
   }
   
   function dropClick(){
@@ -83,6 +85,7 @@ function NewPost(props, {keyword}) {
  
   function profClick(){
     setProfessor("")
+    setFiltered("")
   }
   
   const BarStyle = {width:"11.4rem",background:"#F0F0F0", border:"none", padding:"0.5rem"};

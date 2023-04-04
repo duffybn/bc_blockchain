@@ -82,7 +82,7 @@ const Home = ({keyword, onChange}) => {
     
   }
   
-  console.log("This is working")
+  console.log("This is working", keyword)
   
   return (
     <div>
@@ -97,7 +97,7 @@ const Home = ({keyword, onChange}) => {
        
   
       <div>
-          {(filtered.length == 0 ) ?
+          {((filtered.length == 0 ) && (keyword == "")) ?
             posts.map((post) => (
           <div key = {post.id}>
             <Link to={`/profile/` + post.professor}>
