@@ -149,7 +149,7 @@ function NewPost(props, {keyword}) {
       </button>
       <p></p>
       {
-      (((test.college != "")&&(professor != "")) && ((desc != "") && (grade != "")))?
+      (((test.college != "")&&(test.grade != "")) && ((test.userId != "") && (test.desc != "")))?
       
       ((bool == "True") ?(<div>Review for {test.userId} at {test.college}
       <p></p>
