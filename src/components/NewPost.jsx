@@ -30,6 +30,7 @@ function NewPost(props, {keyword}) {
   const [drop, setDrop] = useState("");
   const [post, setPost] = useState("")
   const [test, setTest] = useState("")
+  const [bool, setBool] = useState("")
   const [professor, setProfessor] = useState("")
   const [filtered, setFiltered] = useState("");
   const {param} = useParams();
@@ -55,11 +56,14 @@ function NewPost(props, {keyword}) {
 
   function handlePost(e){
     const post ={
-      userId: drop,
+      userId: professor,
       desc: desc,
-      grade: grade
+      grade: grade,
+      college: drop
+      
     };
     setTest(post)
+    setBool("True")
     console.log(post)
   }
   
@@ -79,21 +83,21 @@ function NewPost(props, {keyword}) {
     <div>
       
       <Dropdown
-        trigger={<button>Select College...</button>}
+        trigger={<button>Select College: {drop}</button>}
         menu={colleges.map((post) => ( <button onClick={handleMenu} value={post.school}>{post.school} </button> ))}
 
         />
-      The college selected {drop}
       <p></p>
-
+      {console.log("keyword",keyword)}
+      { keyword == undefined ?
       <input 
        style={BarStyle}
        key="search-bar"
        value= {keyword}
        placeholder={"Search Professor"}
        onChange = {handleChange}
-      />
-      
+      /> : console.log("hi")
+      }
       <div>
         {(filtered.length == 0) ? console.log("hi") 
         : filtered.map((post) => (
@@ -106,20 +110,23 @@ function NewPost(props, {keyword}) {
       </div>
       {console.log(professor)}
       <p></p>
-      The professor selected {professor}
-      <p></p>
       <textarea placeholder="Enter review..." value={desc} onChange={handleDescChange}></textarea>
       <p></p>
-      {desc}
-      <p></p>
-      <input type="number" placeholder="" value={grade} onChange={handleGradeChange} min = "0.0" max="10.0"/>
-      <p></p>
-      {grade}
+      <input type="number" placeholder="#" value={grade} onChange={handleGradeChange} min = "0.0" max="10.0"/>
       <p></p>
       <button onClick={handlePost}>
       Submit
       </button>
-      
+      <p></p>
+      { (bool == "True") ?
+      <div>Review for {test.userId} at {test.college}
+      <p></p>
+      Review: {test.desc} <p></p>
+      Grade: {test.grade}
+          
+      </div> :
+      console.log("bye")
+      }
    </div>
     
   );
@@ -134,8 +141,6 @@ const Dropdown = ({ trigger, menu }) => {
 
   return (
     <div>
-      New Post Page
-      <p></p>
       <div className="dropdown">
         {React.cloneElement(trigger, {
           onClick: handleOpen,
