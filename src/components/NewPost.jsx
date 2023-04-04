@@ -73,6 +73,8 @@ function NewPost(props, {keyword}) {
   
   function handleChange(){
     
+
+  
     (event.target.value != "") ? (
     setFiltered(posts.filter(d=>d.professor.toLowerCase().includes(event.target.value.toLowerCase()))))
  :
@@ -147,13 +149,15 @@ function NewPost(props, {keyword}) {
       </button>
       <p></p>
       {
-      (((test.userId != "")&&(test.college != "")) && ((test.desc != "") && (test.grade != "")))?
+      (((test.college != "")&&(professor != "")) && ((desc != "") && (grade != "")))?
       
       ((bool == "True") ?(<div>Review for {test.userId} at {test.college}
       <p></p>
       Review: {test.desc} <p></p>
       Grade: {test.grade}   
-      </div> )
+      {console.log(test)}
+      </div> 
+      )
        
       :
        
