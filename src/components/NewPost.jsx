@@ -36,7 +36,6 @@ function NewPost(props, {keyword}) {
   const {param} = useParams();
   const value = ""
   
-  
   function handleClick(){
     navigate(-1)
   }
@@ -73,7 +72,8 @@ function NewPost(props, {keyword}) {
   }
   
   function handleChange(){
-    const stage = posts.filter(d=>d.professor.includes(event.target.value))
+    const stage = posts.filter(d=>d.professor.toLowerCase().includes(event.target.value.toLowerCase()))
+    
     setFiltered(stage)
   }
  
@@ -88,16 +88,15 @@ function NewPost(props, {keyword}) {
 
         />
       <p></p>
-      {console.log("keyword",keyword)}
-      { keyword == undefined ?
+      {console.log("keyword",drop)}
+  
       <input 
        style={BarStyle}
        key="search-bar"
        value= {keyword}
-       placeholder={"Search Professor"}
+       placeholder={"Search Professor... "}
        onChange = {handleChange}
-      /> : console.log("hi")
-      }
+      /> 
       <div>
         {(filtered.length == 0) ? console.log("hi") 
         : filtered.map((post) => (
@@ -112,7 +111,7 @@ function NewPost(props, {keyword}) {
       <p></p>
       <textarea placeholder="Enter review..." value={desc} onChange={handleDescChange}></textarea>
       <p></p>
-      <input type="number" placeholder="#" value={grade} onChange={handleGradeChange} min = "0.0" max="10.0"/>
+      <input type="number" placeholder="0-10" value={grade} onChange={handleGradeChange} min = "0.0" max="10.0"/>
       <p></p>
       <button onClick={handlePost}>
       Submit

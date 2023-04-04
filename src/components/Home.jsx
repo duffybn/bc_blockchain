@@ -76,7 +76,7 @@ const Home = ({keyword, onChange}) => {
   function handleChange(event) {
 
     console.log(event.target.value);
-    const test = posts.filter(d=>d.professor.includes(event.target.value));
+    const test = posts.filter(d=>d.professor.toLowerCase().includes(event.target.value.toLowerCase()));
     setFiltered(test);
     console.log("inside", filtered)
     
