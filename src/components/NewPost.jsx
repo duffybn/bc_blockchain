@@ -81,22 +81,29 @@ function NewPost(props, {keyword}) {
   
   return (
     <div>
-      
-      <Dropdown
+      {(drop == "")?
+      (<Dropdown
         trigger={<button>Select College: {drop}</button>}
         menu={colleges.map((post) => ( <button onClick={handleMenu} value={post.school}>{post.school} </button> ))}
 
-        />
+        />) :
+      (<div>You have selected {drop}</div>)
+      }
       <p></p>
       {console.log("keyword",drop)}
   
-      <input 
+      {(professor == "")?console.log("yes"):console.log("no")}
+      
+      {
+      (professor == "")?
+      (<div><input 
        style={BarStyle}
        key="search-bar"
        value= {keyword}
        placeholder={"Search Professor... "}
        onChange = {handleChange}
       /> 
+      
       <div>
         {(filtered.length == 0) ? console.log("hi") 
         : filtered.map((post) => (
@@ -107,6 +114,12 @@ function NewPost(props, {keyword}) {
         </div>
         ))}
       </div>
+      </div>) :
+      <div>You have selected {professor} </div>
+      
+      }
+        
+      
       {console.log(professor)}
       <p></p>
       <textarea placeholder="Enter review..." value={desc} onChange={handleDescChange}></textarea>
@@ -117,14 +130,16 @@ function NewPost(props, {keyword}) {
       Submit
       </button>
       <p></p>
-      { (bool == "True") ?
+      {
+      
+      ((bool == "True") ?(
       <div>Review for {test.userId} at {test.college}
       <p></p>
       Review: {test.desc} <p></p>
       Grade: {test.grade}
           
-      </div> :
-      console.log("bye")
+      </div> ):
+      console.log("bye"))
       }
    </div>
     

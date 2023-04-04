@@ -95,8 +95,7 @@ const Home = ({keyword, onChange}) => {
        onChange = {handleChange}
       />
        
-       {console.log(posts.length, "posts")}
-       {console.log(filtered.length, "fill")}
+  
       <div>
           {(filtered.length == 0 ) ?
             posts.map((post) => (
