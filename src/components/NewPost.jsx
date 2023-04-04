@@ -76,7 +76,15 @@ function NewPost(props, {keyword}) {
     
     setFiltered(stage)
   }
+  
+  function dropClick(){
+    setDrop("")
+  }
  
+  function profClick(){
+    setProfessor("")
+  }
+  
   const BarStyle = {width:"11.4rem",background:"#F0F0F0", border:"none", padding:"0.5rem"};
   
   return (
@@ -87,7 +95,10 @@ function NewPost(props, {keyword}) {
         menu={colleges.map((post) => ( <button onClick={handleMenu} value={post.school}>{post.school} </button> ))}
 
         />) :
-      (<div>You have selected {drop}</div>)
+      (<div>
+      <div>You have selected {drop}</div>
+      <button onClick={dropClick}> Undo </button>
+      </div>)
       }
       <p></p>
       {console.log("keyword",drop)}
@@ -115,8 +126,10 @@ function NewPost(props, {keyword}) {
         ))}
       </div>
       </div>) :
+      <div>
       <div>You have selected {professor} </div>
-      
+      <button onClick={profClick}> Undo </button>
+      </div>
       }
         
       
@@ -131,15 +144,17 @@ function NewPost(props, {keyword}) {
       </button>
       <p></p>
       {
+      (((test.userId != "")&&(test.college != "")) && ((test.desc != "") && (test.grade != "")))?
       
-      ((bool == "True") ?(
-      <div>Review for {test.userId} at {test.college}
+      ((bool == "True") ?(<div>Review for {test.userId} at {test.college}
       <p></p>
       Review: {test.desc} <p></p>
-      Grade: {test.grade}
-          
-      </div> ):
-      console.log("bye"))
+      Grade: {test.grade}   
+      </div> )
+       
+      :
+       
+      console.log("bye")) :(<div> ERROR: Not all fields filled</div>)
       }
    </div>
     
