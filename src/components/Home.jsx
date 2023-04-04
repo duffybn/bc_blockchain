@@ -97,7 +97,7 @@ const Home = ({keyword, onChange}) => {
        
   
       <div>
-          {((filtered.length == 0 ) && (keyword == "")) ?
+          {((filtered.length == 0 )) ?
             posts.map((post) => (
           <div key = {post.id}>
             <Link to={`/profile/` + post.professor}>
