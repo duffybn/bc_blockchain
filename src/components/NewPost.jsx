@@ -2,6 +2,7 @@ import React, {useState, useContext} from "react";
 import css from '../styles/newPost.module.css';
 
 import posts from "../utils/posts.js"
+import colleges from "../utils/colleges.js"
 // import {StoreContext} from '../contexts/StoreContext.jsx';
 import {
   useNavigate,
@@ -55,19 +56,26 @@ function NewPost(props) {
       grade: grade
     };
     setTest(post)
-    console.log(drop)
+    console.log(post)
   }
+  
+  function handleChange(){
+    
+  }
+ 
+  const BarStyle = {width:"111rem",background:"#F0F0F0", border:"none", padding:"0.5rem"};
   
   return (
     <div>
       
       <Dropdown
-        trigger={<button>Select...</button>}
-        menu={posts.map((post) => ( <button onClick={handleMenu} value={post.professor}>{post.professor} at {post.college} </button> ))}
+        trigger={<button>Select College...</button>}
+        menu={colleges.map((post) => ( <button onClick={handleMenu} value={post.school}>{post.school} </button> ))}
 
         />
       You have selected {drop}
       <p></p>
+
       <textarea placeholder="Enter review..." value={desc} onChange={handleDescChange}></textarea>
       <p></p>
       {desc}
