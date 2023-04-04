@@ -30,6 +30,7 @@ function NewPost(props, {keyword}) {
   const [drop, setDrop] = useState("");
   const [post, setPost] = useState("")
   const [test, setTest] = useState("")
+  const [professor, setProfessor] = useState("")
   const [filtered, setFiltered] = useState("");
   const {param} = useParams();
   const value = ""
@@ -62,6 +63,11 @@ function NewPost(props, {keyword}) {
     console.log(post)
   }
   
+  function selectProfessor(event){
+    console.log("professor", event.target.value)
+    setProfessor(event.target.value)
+  }
+  
   function handleChange(){
     const stage = posts.filter(d=>d.professor.includes(event.target.value))
     setFiltered(stage)
@@ -77,7 +83,7 @@ function NewPost(props, {keyword}) {
         menu={colleges.map((post) => ( <button onClick={handleMenu} value={post.school}>{post.school} </button> ))}
 
         />
-      You have selected {drop}
+      The college selected {drop}
       <p></p>
 
       <input 
@@ -92,13 +98,16 @@ function NewPost(props, {keyword}) {
         {(filtered.length == 0) ? console.log("hi") 
         : filtered.map((post) => (
         <div>
-          <button>
+          <button onClick={selectProfessor} value={post.professor}>
             {post.professor}
           </button>
         </div>
         ))}
       </div>
-      
+      {console.log(professor)}
+      <p></p>
+      The professor selected {professor}
+      <p></p>
       <textarea placeholder="Enter review..." value={desc} onChange={handleDescChange}></textarea>
       <p></p>
       {desc}
