@@ -161,7 +161,7 @@ function NewPost(props, {keyword}) {
        
       :
        
-      console.log("bye")) :(<div> ERROR: Not all fields filled</div>)
+      console.log("test")) :(<div> ERROR: Not all fields filled</div>)
       }
    </div>
     
