@@ -23,6 +23,14 @@ function Profile(){
   // }
   const filtered2 = initialStore.filter(d=> (d.userId == userId));
   
+  axios.get("")
+    .then(d => {
+    
+    
+    
+  })
+  
+  
     return(
     <div>
         {userId}'s Profile
