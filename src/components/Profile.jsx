@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import {Navigate} from 'react-router-dom';
 import initialStore from "../utils/initialStore.js"
+import axios from 'axios';
 
 function Profile(){
   const {userId} = useParams();
