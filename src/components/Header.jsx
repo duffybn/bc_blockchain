@@ -16,28 +16,28 @@ function Header() {
   return (
     <nav className={css.header}>
        <div className={css.headitem}>
-          <button onClick={handleCancel}>
-              <img src="https://cdn.glitch.global/d7674480-73e0-49e0-acd4-3805874f347b/back.svg?v=1645800817845" alt="Back"/>
+          <button onClick={handleCancel} className={css.headitem}>
+              Back
           </button>
       </div>
       <div className={css.headitem}>
-           <Link to="/">
-              <img src="https://cdn.glitch.global/d7674480-73e0-49e0-acd4-3805874f347b/explore.svg?v=1645800816800" alt="NewPost"/>
+           <Link to="/" className={css.headitem}>
+            Search
           </Link>
       </div>
       <div>
-        <button>
+        <button className={css.title}>
           EVA          
         </button>
       </div>
       <div className={css.headitem}>
-           <Link to="/dummy">
-              <img src="https://cdn.glitch.global/ce7a503b-7720-4b27-9a59-4a32173ba09d/newpost.svg?v=1647444622487" alt="NewPost"/>
+           <Link to="/dummy" className={css.headitem}>
+             New Post
           </Link>
       </div>
       <div className={css.headitem}>
-           <Link to="/login">
-              <img src="https://cdn.glitch.global/d7674480-73e0-49e0-acd4-3805874f347b/profile.svg?v=1645800817556" alt="NewPost"/>
+           <Link to="/login" className={css.headitem}>
+              Login
           </Link>
       </div>
     </nav>

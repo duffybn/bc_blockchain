@@ -9,9 +9,18 @@
   margin:0;
   box-sizing:border-box;
   border-bottom:1px solid gainsboro;
-  background-color: white;
+  background-color: #385170;
 
 }
 .headitem{
   cursor:pointer;
+  color: #9fd3c7;
+  text-decoration: none;
+}
+
+.hea
+
+.title{
+  color:#9fd3c7;
+  
 }
