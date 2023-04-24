@@ -103,7 +103,7 @@ const Home = ({keyword, onChange}) => {
             posts.map((post) => (
           <div key = {post.id}  className={css.box}>
             <Link to={`/profile/` + post.professor} className={css.text} >
-              {post.professor} at {post.college}
+              <strong>{post.professor}</strong> <p></p> {post.college}
             </Link>
           </div>  
         ))
@@ -112,7 +112,7 @@ const Home = ({keyword, onChange}) => {
           filtered.map((post) => (
           <div key = {post.id}>
             <Link to={`/profile/` + post.professor}>
-              {post.professor} at {post.college}
+              <strong>{post.professor}</strong> <p></p> {post.college}
             </Link>
           </div>  
         ))}
