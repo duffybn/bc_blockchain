@@ -87,7 +87,7 @@ const Home = ({keyword, onChange}) => {
   console.log("This is working", keyword)
   
   return (
-    <div>
+    <div className={css.back}>
       <div className={css.test}>
       <input 
        className={css.bar}
@@ -110,8 +110,8 @@ const Home = ({keyword, onChange}) => {
         // console.log("empty")
           :
           filtered.map((post) => (
-          <div key = {post.id}>
-            <Link to={`/profile/` + post.professor}>
+          <div key = {post.id}  className={css.box}>
+            <Link to={`/profile/` + post.professor}  className={css.text}>
               <strong>{post.professor}</strong> <p></p> {post.college}
             </Link>
           </div>  
