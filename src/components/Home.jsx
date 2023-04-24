@@ -98,11 +98,11 @@ const Home = ({keyword, onChange}) => {
       />
        
   
-      <div>
+      <div >
           {((filtered.length == 0 )) ?
             posts.map((post) => (
-          <div key = {post.id}>
-            <Link to={`/profile/` + post.professor}>
+          <div key = {post.id}  className={css.box}>
+            <Link to={`/profile/` + post.professor} className={css.text} >
               {post.professor} at {post.college}
             </Link>
           </div>  
