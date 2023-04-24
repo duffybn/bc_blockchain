@@ -1,3 +1,5 @@
+
+
 .bar{
   margin-left: auto;
   margin-right: auto;
@@ -10,11 +12,12 @@
 .box{
    background-color: #9fd3c7;
    border:2px solid #ececec;
-    margin-left: auto;
+   margin-left: auto;
    margin-right: auto;
    padding: 10px;
-   margin: 10px;
+   margin: 0 auto;
    width: 40%;
+
 }
 
 .text{

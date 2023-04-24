@@ -88,7 +88,7 @@ const Home = ({keyword, onChange}) => {
   
   return (
     <div>
-      
+      <div className={css.test}>
       <input 
        className={css.bar}
        key="search-bar"
@@ -96,7 +96,7 @@ const Home = ({keyword, onChange}) => {
        placeholder={"Search Professor"}
        onChange = {handleChange}
       />
-       
+      </div>
   
       <div >
           {((filtered.length == 0 )) ?
