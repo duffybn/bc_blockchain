@@ -2,6 +2,7 @@ import React, { useContext, useState} from "react";
 import Post from "./Post.jsx";
 import Search from "./Search.jsx"
 import posts from "../utils/posts.js"
+import css from "../styles/Search.module.css";
 // import { StoreContext } from "../contexts/StoreContext";
 import {
   Link,
@@ -68,7 +69,8 @@ import {
  // 
 
 const Home = ({keyword, onChange}) => {
-  const BarStyle = {width:"111rem",background:"#F0F0F0", border:"none", padding:"0.5rem"};
+  // const BarStyle = {width:"111rem",background:"#F0F0F0", border:"none", padding:"0.5rem", };
+  const BarStyle = {width: "500px", padding:"10px", margin:"10px"};
   const [filtered, setFiltered] = useState("");
   const [searchInput, setSearchInput] = useState("");  
    const {userId} = useParams();
@@ -88,7 +90,7 @@ const Home = ({keyword, onChange}) => {
     <div>
       
       <input 
-       style={BarStyle}
+       className={css.bar}
        key="search-bar"
        value={keyword}
        placeholder={"Search Professor"}

@@ -113,7 +113,7 @@ function NewPost(props, {keyword}) {
       {
       (professor == "")?
       (<div><input 
-       style={BarStyle}
+       style={css.bar}
        key="search-bar"
        value= {keyword}
        placeholder={"Search Professor... "}

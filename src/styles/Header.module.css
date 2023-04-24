@@ -18,7 +18,9 @@
   text-decoration: none;
 }
 
-.hea
+.headitem:hover{
+  color: #ececec
+}
 
 .title{
   color:#9fd3c7;
