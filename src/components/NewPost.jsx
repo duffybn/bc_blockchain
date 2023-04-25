@@ -95,11 +95,11 @@ function NewPost(props, {keyword}) {
   return (
     <div>
       {(drop == "")?
-      (<Dropdown
+      (<div className = {css.box}><Dropdown
         trigger={<button>Select College: {drop}</button>}
         menu={colleges.map((post) => ( <button onClick={handleMenu} value={post.school}>{post.school} </button> ))}
 
-        />) :
+         /></div>) :
       (<div>
       <div>You have selected {drop}</div>
       <button onClick={dropClick}> Undo </button>
@@ -113,7 +113,7 @@ function NewPost(props, {keyword}) {
       {
       (professor == "")?
       (<div><input 
-       style={css.bar}
+       className={css.bar}
        key="search-bar"
        value= {keyword}
        placeholder={"Search Professor... "}
