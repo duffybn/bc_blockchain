@@ -65,18 +65,32 @@
 .review{
   background-color: #9fd3c7;
   border:2px solid #142d4c;
+  width: 32%;
+  height: 70px
+  
+}
+
+.number{
+  background-color: #9fd3c7;
+  border:2px solid #142d4c;
 }
 
 textarea::placeholder {
   color: #142d4c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
 }
 
 input::placeholder {
   color: #142d4c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
 }
 
 .button{
   color: #142d4c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
 }
 
 .button:hover{
@@ -86,6 +100,8 @@ input::placeholder {
 
 .submit{
    color: #142d4c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
 }
 
 .submit:hover{
