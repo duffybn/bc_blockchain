@@ -96,7 +96,7 @@ function NewPost(props, {keyword}) {
     <div>
       {(drop == "")?
       (<div className = {css.box}><Dropdown
-        trigger={<button>Select College: {drop}</button>}
+        trigger={<button className={css.button}>Select College: {drop}</button>}
         menu={colleges.map((post) => ( <button onClick={handleMenu} value={post.school}>{post.school} </button> ))}
 
          /></div>) :
@@ -139,10 +139,9 @@ function NewPost(props, {keyword}) {
         
       
       {console.log(professor)}
+      <div ><textarea placeholder="Enter review..." value={desc} onChange={handleDescChange} className = {css.review}></textarea></div>
       <p></p>
-      <textarea placeholder="Enter review..." value={desc} onChange={handleDescChange}></textarea>
-      <p></p>
-      <input type="number" placeholder="0-10" value={grade} onChange={handleGradeChange} min = "0.0" max="10.0"/>
+      <input type="number" placeholder="0-10" value={grade} onChange={handleGradeChange} min = "0.0" max="10.0" className = {css.review}/>
       <p></p>
       <button onClick={handlePost}>
       Submit
