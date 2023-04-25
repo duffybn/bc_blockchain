@@ -97,7 +97,7 @@ function NewPost(props, {keyword}) {
       {(drop == "")?
       (<div className = {css.box}><Dropdown
         trigger={<button className={css.button}>Select College: {drop}</button>}
-        menu={colleges.map((post) => ( <button onClick={handleMenu} value={post.school}>{post.school} </button> ))}
+        menu={colleges.map((post) => ( <button onClick={handleMenu} value={post.school} className={css.button}>{post.school} </button> ))}
 
          /></div>) :
       (<div>
@@ -124,9 +124,11 @@ function NewPost(props, {keyword}) {
         {(filtered.length == 0) ? console.log("hi") 
         : filtered.map((post) => (
         <div>
-          <button onClick={selectProfessor} value={post.professor}>
-            {post.professor}
-          </button>
+          <div>
+            <button onClick={selectProfessor} value={post.professor}>
+              {post.professor}
+            </button>
+          </div>
         </div>
         ))}
       </div>

@@ -83,3 +83,11 @@ input::placeholder {
    text-decoration: underline;
 
 }
+
+.submit{
+   color: #142d4c;
+}
+
+.submit:hover{
+   text-decoration: underline;
+}
