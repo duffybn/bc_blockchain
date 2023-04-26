@@ -1,4 +1,5 @@
 import React from 'react';
+import css from "../styles/Profile.module.css";
 import { useState, useEffect, useContext } from "react";
 import { useParams } from 'react-router-dom';
 import {
@@ -33,10 +34,11 @@ function Profile(){
   
     return(
     <div>
-        {userId}'s Profile
+        <div className={css.head}>{userId}</div>
+        <div className={css.head}></div>
       <p></p>
       {filtered2.map((post) => (
-          <div> {post.desc} {post.grade}</div>
+          <div> {post.desc} </div>
         ))}
     </div>
   );
