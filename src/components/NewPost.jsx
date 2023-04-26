@@ -93,13 +93,13 @@ function NewPost(props, {keyword}) {
   const BarStyle = {width:"11.4rem",background:"#F0F0F0", border:"none", padding:"0.5rem"};
   
   return (
-    <div>
+    <div id="parent">
       {(drop == "")?
-      (<div className = {css.box}><Dropdown
+      (<div id = "child"><div className = {css.box}><Dropdown
         trigger={<button className={css.button}>Select College: {drop}</button>}
         menu={colleges.map((post) => ( <button onClick={handleMenu} value={post.school} className={css.button}>{post.school} </button> ))}
 
-         /></div>) :
+         /></div></div>) :
       (<div>
       <div>You have selected {drop}</div>
       <button onClick={dropClick}> Undo </button>
@@ -120,7 +120,7 @@ function NewPost(props, {keyword}) {
        onChange = {handleChange}
       /> 
       
-      <div>
+      <div >
         {(filtered.length == 0) ? console.log("hi") 
         : filtered.map((post) => (
         <div>

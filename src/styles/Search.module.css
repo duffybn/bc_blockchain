@@ -9,6 +9,7 @@
   margin-bottom: 15px;
   background-color: #9fd3c7;
   border:2px solid #142d4c;
+  
 }
 
 .box{
@@ -18,6 +19,7 @@
    margin-right: auto;
    padding: 10px;
    margin: 0 auto;
+  
    
 
 }
@@ -34,3 +36,11 @@
 .back{
   background-color: #ececec;
 }
+
+.center{
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  text-align: center
+}
+

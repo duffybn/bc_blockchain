@@ -16,6 +16,14 @@
   padding: 16px;
   border-bottom: 1px dashed #dbdbdb;
 }
+
+#child{
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  text-align: center;
+}
+
 .desc textarea{
   box-sizing: border-box;
   width: 100%;
@@ -24,6 +32,7 @@
   outline: none;
   font: inherit;
   padding: 0;
+  
 }
 .actions{
   width:100%;
@@ -36,7 +45,7 @@
   color: #3897f0;
   font-weight: 600;
   font-size: 16px;
-  margin-left:10px;
+  margin-left: 10px;
   padding-bottom: 50px;
 }
 .error{
@@ -60,6 +69,10 @@
   margin-bottom: 15px;
   background-color: #9fd3c7;
   border:2px solid #142d4c;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  text-align: center
 }
 
 .review{
@@ -67,8 +80,11 @@
   border:2px solid #142d4c;
   width: 32%;
   height: 70px
+    
   
 }
+
+
 
 .number{
   background-color: #9fd3c7;
@@ -106,4 +122,18 @@ input::placeholder {
 
 .submit:hover{
    text-decoration: underline;
+}
+
+#parent{
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  text-align: center
+}
+
+.dropdown{
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  text-align: center
 }
