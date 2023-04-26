@@ -35,10 +35,10 @@ function Profile(){
     return(
     <div>
         <div className={css.name}>{userId}</div>
-        <div className={css.grade}>{grade}</div>
+        <div ><h2 className={css.grade}>{grade}</h2></div>
       <p></p>
       {filtered2.map((post) => (
-          <div> {post.desc} </div>
+          <div className={css.posts}> {post.desc} </div>
         ))}
     </div>
   );
