@@ -120,7 +120,7 @@ function NewPost(props, {keyword}) {
        onChange = {handleChange}
       /> 
       
-      <div >
+      <div className="child">
         {(filtered.length == 0) ? console.log("hi") 
         : filtered.map((post) => (
         <div>
@@ -143,11 +143,13 @@ function NewPost(props, {keyword}) {
       {console.log(professor)}
       <div ><textarea placeholder="Enter review..." value={desc} onChange={handleDescChange} className = {css.review}></textarea></div>
       <p></p>
-      <input type="number" placeholder="0-10" value={grade} onChange={handleGradeChange} min = "0.0" max="10.0" className = {css.number}/>
-      <p></p>
-      <button onClick={handlePost} className={css.submit}>
-      Submit
-      </button>
+      <div className="two">
+        <input type="number" placeholder="0-10" value={grade} onChange={handleGradeChange} min = "0.0" max="10.0" className = {css.number}/>
+        <p></p>
+        <button onClick={handlePost} className={css.submit}>
+        Submit
+        </button>
+      </div>
       <p></p>
       {
       (((test.college != "")&&(test.grade != "")) && ((test.userId != "") && (test.desc != "")))?
