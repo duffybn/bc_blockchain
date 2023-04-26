@@ -14,7 +14,7 @@ function Profile(){
   const {userId} = useParams();
   const [filtered, setFiltered] = useState("")
   const placeholder = "Jill"
-  
+  const grade = "8.5"  
   console.log("the man", userId)
   
   
@@ -34,8 +34,8 @@ function Profile(){
   
     return(
     <div>
-        <div className={css.head}>{userId}</div>
-        <div className={css.head}></div>
+        <div className={css.name}>{userId}</div>
+        <div className={css.grade}>{grade}</div>
       <p></p>
       {filtered2.map((post) => (
           <div> {post.desc} </div>
