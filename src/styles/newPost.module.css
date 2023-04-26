@@ -1,26 +1,9 @@
-textarea{
-  display: box;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-div.center{
-   display: flex;
-   justify-content: center;
-   text-align: center;
-   align-items: center; 
-}
-
 .newPost{
   font-family: sans-serif;
   max-width: 450px;
   width:100%;
   margin: 0 auto;
   align-items: center;
-}
-
-.text{
-  text-align: center;
 }
 
 .message{
@@ -33,14 +16,6 @@ div.center{
   padding: 16px;
   border-bottom: 1px dashed #dbdbdb;
 }
-
-.child{
-  display: flex;
-  align-items: center; 
-  justify-content: center;
-  text-align: center;
-}
-
 .desc textarea{
   box-sizing: border-box;
   width: 100%;
@@ -49,7 +24,6 @@ div.center{
   outline: none;
   font: inherit;
   padding: 0;
-  
 }
 .actions{
   width:100%;
@@ -62,7 +36,7 @@ div.center{
   color: #3897f0;
   font-weight: 600;
   font-size: 16px;
-  margin-left: 10px;
+  margin-left:10px;
   padding-bottom: 50px;
 }
 .error{
@@ -82,88 +56,30 @@ div.center{
   margin-right: auto;
   padding: 12.5px;
   height: 20px;
-  width: 30%;
+  width: 32%;
   margin-bottom: 15px;
   background-color: #9fd3c7;
   border:2px solid #142d4c;
-  display: flex;
-  align-items: center; 
-  justify-content: center;
-  text-align: center
 }
 
 .review{
-  background-color: #9fd3c7;
-  border:2px solid #142d4c;
-  width: 100%;
-  height: 70px
-    
-    
-  
-}
-
-
-
-.number{
   background-color: #9fd3c7;
   border:2px solid #142d4c;
 }
 
 textarea::placeholder {
   color: #142d4c;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
 }
 
 input::placeholder {
   color: #142d4c;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-}
-
-.two{
-  border: 1px solid black;
-  margin: 1rem;
-  padding: 2rem 2rem;
-  text-align: center;
-  display: inline-flex;
 }
 
 .button{
   color: #142d4c;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  display: inline-block;
-  
 }
 
 .button:hover{
    text-decoration: underline;
 
-}
-
-.submit{
-   color: #142d4c;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-   display: inline-block;
-}
-
-.submit:hover{
-   text-decoration: underline;
-}
-
-#parent{
-  display: flex;
-  align-items: center; 
-  justify-content: center;
-  text-align: center
-}
-
-.dropdown{
-  display: flex;
-  align-items: center; 
-  justify-content: center;
-  text-align: center;
-  width:30%
 }

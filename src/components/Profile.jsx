@@ -1,5 +1,4 @@
 import React from 'react';
-import css from "../styles/Profile.module.css";
 import { useState, useEffect, useContext } from "react";
 import { useParams } from 'react-router-dom';
 import {
@@ -14,7 +13,7 @@ function Profile(){
   const {userId} = useParams();
   const [filtered, setFiltered] = useState("")
   const placeholder = "Jill"
-  const grade = "8.5"  
+  
   console.log("the man", userId)
   
   
@@ -33,12 +32,11 @@ function Profile(){
   
   
     return(
-    <div className={css.left}>
-        <div className={css.name}>{userId}</div>
-        <div ><h2 className={css.grade}>{grade}</h2></div>
+    <div>
+        {userId}'s Profile
       <p></p>
       {filtered2.map((post) => (
-          <div className={css.posts}> {post.desc} </div>
+          <div> {post.desc} {post.grade}</div>
         ))}
     </div>
   );

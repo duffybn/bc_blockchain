@@ -93,8 +93,19 @@ function NewPost(props, {keyword}) {
   const BarStyle = {width:"11.4rem",background:"#F0F0F0", border:"none", padding:"0.5rem"};
   
   return (
-    <div id="parent">
-  
+    <div>
+      {(drop == "")?
+      (<div className = {css.box}><Dropdown
+        trigger={<button className={css.button}>Select College: {drop}</button>}
+        menu={colleges.map((post) => ( <button onClick={handleMenu} value={post.school}>{post.school} </button> ))}
+
+         /></div>) :
+      (<div>
+      <div>You have selected {drop}</div>
+      <button onClick={dropClick}> Undo </button>
+      </div>)
+      }
+      <p></p>
       {console.log("keyword",drop)}
   
       {(professor == "")?console.log("yes"):console.log("no")}
@@ -109,15 +120,13 @@ function NewPost(props, {keyword}) {
        onChange = {handleChange}
       /> 
       
-      <div className="child">
+      <div>
         {(filtered.length == 0) ? console.log("hi") 
         : filtered.map((post) => (
         <div>
-          <div className={css.text}>
-            <button onClick={selectProfessor} value={post.professor}>
-              {post.professor}
-            </button>
-          </div>
+          <button onClick={selectProfessor} value={post.professor}>
+            {post.professor}
+          </button>
         </div>
         ))}
       </div>
@@ -127,29 +136,16 @@ function NewPost(props, {keyword}) {
       <button onClick={profClick}> Undo </button>
       </div>
       }
-      {(drop == "")?
-      (<div id = "child"><div className = {css.box}><Dropdown
-        trigger={<button className={css.button}>Select College: {drop}</button>}
-        menu={colleges.map((post) => ( <button onClick={handleMenu} value={post.school} className={css.button}>{post.school} </button> ))}
-
-         /></div></div>) :
-      (<div>
-      <div>You have selected {drop}</div>
-      <button onClick={dropClick}> Undo </button>
-      </div>)
-      }
-      <p></p>
+        
       
       {console.log(professor)}
-      <div class="center"><textarea placeholder="Enter review..." value={desc} onChange={handleDescChange} className = {css.review}></textarea></div>
+      <div ><textarea placeholder="Enter review..." value={desc} onChange={handleDescChange} className = {css.review}></textarea></div>
       <p></p>
-      <div className="two">
-        <input type="number" placeholder="0-10" value={grade} onChange={handleGradeChange} min = "0.0" max="10.0" className = {css.number}/>
-        <p></p>
-        <button onClick={handlePost} className={css.submit}>
-        Submit
-        </button>
-      </div>
+      <input type="number" placeholder="0-10" value={grade} onChange={handleGradeChange} min = "0.0" max="10.0" className = {css.review}/>
+      <p></p>
+      <button onClick={handlePost}>
+      Submit
+      </button>
       <p></p>
       {
       (((test.college != "")&&(test.grade != "")) && ((test.userId != "") && (test.desc != "")))?
