@@ -141,7 +141,7 @@ function NewPost(props, {keyword}) {
         
       
       {console.log(professor)}
-      <div ><textarea placeholder="Enter review..." value={desc} onChange={handleDescChange} className = {css.review}></textarea></div>
+      <div class="center"><textarea placeholder="Enter review..." value={desc} onChange={handleDescChange} className = {css.review}></textarea></div>
       <p></p>
       <div className="two">
         <input type="number" placeholder="0-10" value={grade} onChange={handleGradeChange} min = "0.0" max="10.0" className = {css.number}/>
