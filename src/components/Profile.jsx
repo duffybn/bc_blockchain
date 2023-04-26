@@ -33,7 +33,7 @@ function Profile(){
   
   
     return(
-    <div>
+    <div className={css.left}>
         <div className={css.name}>{userId}</div>
         <div ><h2 className={css.grade}>{grade}</h2></div>
       <p></p>
