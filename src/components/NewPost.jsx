@@ -94,18 +94,7 @@ function NewPost(props, {keyword}) {
   
   return (
     <div id="parent">
-      {(drop == "")?
-      (<div id = "child"><div className = {css.box}><Dropdown
-        trigger={<button className={css.button}>Select College: {drop}</button>}
-        menu={colleges.map((post) => ( <button onClick={handleMenu} value={post.school} className={css.button}>{post.school} </button> ))}
-
-         /></div></div>) :
-      (<div>
-      <div>You have selected {drop}</div>
-      <button onClick={dropClick}> Undo </button>
-      </div>)
-      }
-      <p></p>
+  
       {console.log("keyword",drop)}
   
       {(professor == "")?console.log("yes"):console.log("no")}
@@ -124,7 +113,7 @@ function NewPost(props, {keyword}) {
         {(filtered.length == 0) ? console.log("hi") 
         : filtered.map((post) => (
         <div>
-          <div>
+          <div className={css.text}>
             <button onClick={selectProfessor} value={post.professor}>
               {post.professor}
             </button>
@@ -138,7 +127,18 @@ function NewPost(props, {keyword}) {
       <button onClick={profClick}> Undo </button>
       </div>
       }
-        
+      {(drop == "")?
+      (<div id = "child"><div className = {css.box}><Dropdown
+        trigger={<button className={css.button}>Select College: {drop}</button>}
+        menu={colleges.map((post) => ( <button onClick={handleMenu} value={post.school} className={css.button}>{post.school} </button> ))}
+
+         /></div></div>) :
+      (<div>
+      <div>You have selected {drop}</div>
+      <button onClick={dropClick}> Undo </button>
+      </div>)
+      }
+      <p></p>
       
       {console.log(professor)}
       <div class="center"><textarea placeholder="Enter review..." value={desc} onChange={handleDescChange} className = {css.review}></textarea></div>
