@@ -13,7 +13,7 @@ function Profile(){
   const {userId} = useParams();
   const [filtered, setFiltered] = useState("")
   const placeholder = "Jill"
-  
+  const [server, setServer] = useState("")
   console.log("the man", userId)
   
   
@@ -23,12 +23,18 @@ function Profile(){
   // }
   const filtered2 = initialStore.filter(d=> (d.userId == userId));
   
-  axios.get("")
-    .then(d => {
+  const profId = 1
+  const api = "http://136.167.98.169:3001/api/getReviews/" + profId.string()
+  console.log("api", api)
+
+  
+  
+//   axios.get("http://136.167.98.169:3001/api/getReviews/")
+//     .then(d => {
     
     
     
-  })
+//   })
   
   
     return(
