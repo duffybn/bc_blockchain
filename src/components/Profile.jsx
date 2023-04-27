@@ -23,19 +23,29 @@ function Profile(){
   // }
   const filtered2 = initialStore.filter(d=> (d.userId == userId));
   
-  const profId = 1
-  const api = "http://136.167.98.169:3001/api/getReviews/" + profId.string()
-  console.log("api", api)
+ 
+//   const api = "http://136.167.98.169:3001/api/getReviews/" 
+//   console.log("api", api)
 
   
   
-//   axios.get("http://136.167.98.169:3001/api/getReviews/")
+//   axios.get("http://136.167.98.169:3001/api/getReviews/1")
 //     .then(d => {
     
-    
+//     console.log("server", d)
     
 //   })
+//   .catch(d => {
+    
+//     console.log("error", d)
+//   })
+//   .finally(d => {
+//     console.log("finally")
+//   })
   
+const axiosInstance = axios.create({
+  baseURL: 'http://136.167.98.169:3001/api', // Replace with your server's URL
+});
   
     return(
     <div>
