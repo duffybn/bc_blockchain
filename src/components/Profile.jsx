@@ -29,23 +29,33 @@ function Profile(){
 
   
   
-//   axios.get("http://136.167.98.169:3001/api/getReviews/1")
-//     .then(d => {
+  axios.get("http://136.167.98.169:3001/api/getReviews/1")
+    .then(d => {
     
-//     console.log("server", d)
+    console.log("server", d)
     
-//   })
-//   .catch(d => {
+  })
+  .catch(d => {
     
-//     console.log("error", d)
-//   })
-//   .finally(d => {
-//     console.log("finally")
-//   })
+    console.log("error", d)
+  })
+  .finally(d => {
+    console.log("finally")
+  })
   
-const axiosInstance = axios.create({
-  baseURL: 'http://136.167.98.169:3001/api', // Replace with your server's URL
-});
+// const axiosInstance = axios.create({
+//   baseURL: 'http://136.167.98.169:3001/api', // Replace with your server's URL
+// });
+  
+// axiosInstance.get('/getReviews/2')
+//   .then(response => {
+//     // Handle the response data
+//     console.log(response.data);
+//   })
+//   .catch(error => {
+//     // Handle the error
+//     console.error(error);
+//   });
   
     return(
     <div>
